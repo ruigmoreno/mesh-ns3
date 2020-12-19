@@ -478,71 +478,75 @@ MeshTest::Report ()
 }
 void
 MeshTest::Write_csv(){
-    // Make a CSV file with one or more columns of integer values
-    // Each column of data is represented by the pair <column name, column data>
-    //   as std::pair<std::string, std::vector<int>>
-    // The dataset is represented as a vector of these columns
-    // Note that all columns should be the same size
-    
-    // std::vector<std::pair<std::string, std::vector<float>>> dataset;
 
     // Create an output filestream object
     std::string filename = "mp-report.csv";
-    bool isEmptyHeader = true;
     bool hasFile = true;
     std::string header = "DeliveryRate,Throughput,DelayMean,JitterMean,";
     std::fstream myReport(filename, std::ios::in);  //open a file to perform read operation using file object
+    std::vector<std::string> v_string; // Created to store the lines from .csv files and to update new data
     
-    if (myReport.fail()) { hasFile = false; }
-    std::vector<std::string> v_string;
+    if (myReport.fail()) { 
+      hasFile = false;
+      std::cerr << "Failed! There isn't " << filename << " in directory.";
+      v_string.push_back(header + "\n");
+      std::cerr << "Header in Vector: " << v_string.at(0) << "\n";      
+    }
+
+    // Reading the existing report .csv file
     if (myReport.is_open() && hasFile)   //checking whether the file is open
     {
+      std::cerr << "File opened!" << "\n";
       std::string tp;
       while (std::getline(myReport, tp)) //read data from file object and put it into string.
       {
-        v_string.push_back(tp);
-        if (!tp.empty()){ if (tp == header) continue; }
-        else{ isEmptyHeader = false;  }
-        std::cerr << tp << std::endl; //print the data of the string
+        if (!tp.empty()) 
+        {
+          v_string.push_back(tp + "\n");
+        } else { 
+          v_string.push_back(header + "\n");
+        }
       }
       myReport.close(); //close the file object.
     }
+    // Printing what was readed at existing file
+    std::cerr << "Printing what was readed at existing file..." << std::endl;
+    std::for_each(v_string.begin(), v_string.end(), [](std::string vs)
+    {
+      std::cerr << "vector before: " << vs;
+    });
+
+    // int it = v_string.begin();
+    // for (it; it != v_string.end(); it++){
+    //   std::cerr << "pass here" << std::endl;
+    // }
+    // Updating the lines added
+    v_string.push_back(
+      std::to_string(delivery_rate)+","+
+      std::to_string(throughput)+","+
+      std::to_string(delay_mean)+","+
+      std::to_string(jitter_mean)+","+
+      "\n"
+    );
+    std::cerr << "\n";
+    // Reading the lines that they were added
     std::for_each(v_string.begin(), v_string.end(), [](std::string s)
     {
-      std::cerr <<"vector: " << s << std::endl;
+      std::cerr << "vector after: " << s;
     });
-    myReport.open(filename, std::ios::out);  // open a file to perform write operation using file object
+    std::cerr << "\n";
+    // Writing the lines to the mp-report.csv file
     std::cerr << "Writing mesh simulate diagnostics to " << filename << std::endl;
-    std::string test;
+    myReport.open(filename, std::ios::out);  // open a file to perform write operation using file object
     if (myReport.is_open())
     {
-      if (isEmptyHeader) 
-      { 
-        myReport << header;
-        myReport << "\n";
-        myReport << delivery_rate << ",";
-        myReport << throughput << ",";
-        myReport << delay_mean << ",";
-        myReport << jitter_mean << ",";
-        myReport << "\n";        
-        // myReport.seekp(0);
-      } else {
-        // myReport << std::to_string(delivery_rate) << ",";
-        std::cerr << delivery_rate << std::endl;
-        std::cerr << throughput << std::endl;
-        std::for_each(v_string.begin(), v_string.end(), [&myReport](std::string s)
-        {
-          myReport << s;
-          std::cerr << "vector: " << s << std::endl;
-        });
-        myReport << delivery_rate << ",";
-        myReport << throughput << ",";        
-        myReport << delay_mean << ",";
-        myReport << jitter_mean << ",";
-        myReport << "\n";
-      }
+      std::for_each(v_string.begin(), v_string.end(), [&myReport](std::string s)
+      {
+        myReport << s;
+      });      
     }
     myReport.close();
+    std::cerr << "mp-report.csv was closed!" << std::endl;
 }
 int
 main (int argc, char *argv[])

@@ -33,7 +33,7 @@ unicastPreqThreshold="1"
 unicastDataThreshold="1"
 doFlag="0"
 rfFlag="1">
-<Statistics txUnicast="37711" txBroadcast="1" txBytes="317844752" droppedTtl="0" totalQueued="197" totalDropped="0" initiatedPreq="5" initiatedPrep="1" initiatedPerr="0"/>
+<Statistics txUnicast="37711" txBroadcast="1" txBytes="317843008" droppedTtl="0" totalQueued="415" totalDropped="0" initiatedPreq="5" initiatedPrep="1" initiatedPerr="0"/>
 <HwmpProtocolMac
 address ="00:00:00:00:00:02">
 <Statistics txPreq= "5"
@@ -73,8 +73,8 @@ beaconShift="0"/>
 localAddress="00:00:00:00:00:02"
 peerInterfaceAddress="00:00:00:00:00:01"
 peerMeshPointAddress="00:00:00:00:00:01"
-metric="88"
-lastBeacon="29.5652"
+metric="173"
+lastBeacon="29.5654"
 localLinkId="1"
 peerLinkId="1"
 assocId="0"

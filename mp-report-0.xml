@@ -4,8 +4,8 @@ txUnicastData="1"
 txUnicastDataBytes="28"
 txBroadcastData="0"
 txBroadcastDataBytes="0"
-rxUnicastData="29858"
-rxUnicastDataBytes="31410616"
+rxUnicastData="16485"
+rxUnicastDataBytes="17342220"
 rxBroadcastData="1"
 rxBroadcastDataBytes="28"
 fwdUnicastData="0"
@@ -14,7 +14,7 @@ fwdBroadcastData="1"
 fwdBroadcastDataBytes="28"
 />
 <Interface BeaconInterval="0.5" Channel="0" Address = "00:00:00:00:00:01">
-<Statistics rxBeacons="60" txFrames="10" txBytes="366" rxFrames="29867" rxBytes="31828976"/>
+<Statistics rxBeacons="60" txFrames="10" txBytes="366" rxFrames="16494" rxBytes="17573358"/>
 </Interface>
 <Hwmp address="00:00:00:00:00:01"
 maxQueueSize="255"
@@ -48,8 +48,8 @@ rxMgt="6"
 rxMgtBytes="240"
 txData="2"
 txDataBytes="72"
-rxData="29859"
-rxDataBytes="31649516"/>
+rxData="16486"
+rxDataBytes="17474136"/>
 </HwmpProtocolMac>
 </Hwmp>
 <PeerManagementProtocol>
@@ -73,8 +73,8 @@ beaconShift="0"/>
 localAddress="00:00:00:00:00:01"
 peerInterfaceAddress="00:00:00:00:00:02"
 peerMeshPointAddress="00:00:00:00:00:02"
-metric="151"
-lastBeacon="29.5054"
+metric="150"
+lastBeacon="29.5058"
 localLinkId="1"
 peerLinkId="1"
 assocId="0"
