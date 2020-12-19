@@ -1,12 +1,7 @@
 Waf: Entering directory `/home/pixidu/workspace/ns-allinone-3.29/ns-3.29/build/optimized'
-[2683/2739] Linking build/optimized/scratch/mesh
-[2686/2739] Linking build/optimized/scratch/scratch-simulator
-[2687/2739] Linking build/optimized/scratch/subdir/subdir
-[2688/2739] Compiling scratch/mesh-NGN.cc
-[2703/2739] Linking build/optimized/scratch/mesh-NGN
 Waf: Leaving directory `/home/pixidu/workspace/ns-allinone-3.29/ns-3.29/build/optimized'
 Build commands will be stored in build/optimized/compile_commands.json
-'build' finished successfully (14.265s)
+'build' finished successfully (8.835s)
 argc: 2;
 argv[0]: /home/pixidu/workspace/ns-allinone-3.29/ns-3.29/build/optimized/scratch/mesh-NGN
 argv[1]: --step=80

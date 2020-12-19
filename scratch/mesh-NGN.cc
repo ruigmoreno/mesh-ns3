@@ -488,15 +488,14 @@ MeshTest::Write_csv(){
     
     if (myReport.fail()) { 
       hasFile = false;
-      std::cerr << "Failed! There isn't " << filename << " in directory.";
+      std::cerr << "There isn't " << filename << " in directory." << std::endl;
+      std::cerr << "It will be created..." << std::endl;
       v_string.push_back(header + "\n");
-      std::cerr << "Header in Vector: " << v_string.at(0) << "\n";      
     }
 
     // Reading the existing report .csv file
     if (myReport.is_open() && hasFile)   //checking whether the file is open
     {
-      std::cerr << "File opened!" << "\n";
       std::string tp;
       while (std::getline(myReport, tp)) //read data from file object and put it into string.
       {
@@ -509,18 +508,7 @@ MeshTest::Write_csv(){
       }
       myReport.close(); //close the file object.
     }
-    // Printing what was readed at existing file
-    std::cerr << "Printing what was readed at existing file..." << std::endl;
-    std::for_each(v_string.begin(), v_string.end(), [](std::string vs)
-    {
-      std::cerr << "vector before: " << vs;
-    });
 
-    // int it = v_string.begin();
-    // for (it; it != v_string.end(); it++){
-    //   std::cerr << "pass here" << std::endl;
-    // }
-    // Updating the lines added
     v_string.push_back(
       std::to_string(delivery_rate)+","+
       std::to_string(throughput)+","+
@@ -528,14 +516,7 @@ MeshTest::Write_csv(){
       std::to_string(jitter_mean)+","+
       "\n"
     );
-    std::cerr << "\n";
-    // Reading the lines that they were added
-    std::for_each(v_string.begin(), v_string.end(), [](std::string s)
-    {
-      std::cerr << "vector after: " << s;
-    });
-    std::cerr << "\n";
-    // Writing the lines to the mp-report.csv file
+
     std::cerr << "Writing mesh simulate diagnostics to " << filename << std::endl;
     myReport.open(filename, std::ios::out);  // open a file to perform write operation using file object
     if (myReport.is_open())
@@ -543,10 +524,10 @@ MeshTest::Write_csv(){
       std::for_each(v_string.begin(), v_string.end(), [&myReport](std::string s)
       {
         myReport << s;
-      });      
+      });
+      std::cerr << filename << " was writted with successfuly!" << std::endl;
     }
     myReport.close();
-    std::cerr << "mp-report.csv was closed!" << std::endl;
 }
 int
 main (int argc, char *argv[])

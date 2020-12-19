@@ -4,7 +4,9 @@ build/**
 doc/**
 examples/**
 
-
+# Data files
+mp-report-*.xml
+mp-report.csv
 
 # Prerequisites
 *.d
