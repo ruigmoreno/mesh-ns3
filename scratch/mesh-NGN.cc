@@ -138,7 +138,7 @@ MeshTest::MeshTest () :
   m_step (80),
   m_randomStart (0.1),
   m_totalTime (30.0),
-  m_packetInterval (0.0001),
+  m_packetInterval (0.1),
   m_timeStartFlowSources(1),
   m_packetSize (1024),
   m_nIfaces (1),

@@ -4,9 +4,10 @@ build/**
 doc/**
 examples/**
 
-# Data files
-mp-report-*.xml
+# Data or results files from simulations
+mp-report*.xml
 mp-report.csv
+output.txt
 
 # Prerequisites
 *.d
