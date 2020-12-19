@@ -1,3 +1,11 @@
+# Directories and subdirectories
+bindings/python/**
+build/**
+doc/**
+examples/**
+
+
+
 # Prerequisites
 *.d
 
