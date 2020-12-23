@@ -496,6 +496,7 @@ MeshTest::Write_csv(){
     // Reading the existing report .csv file
     if (myReport.is_open() && hasFile)   //checking whether the file is open
     {
+      bool hasHeader = false;
       std::string tp;
       while (std::getline(myReport, tp)) //read data from file object and put it into string.
       {
@@ -505,7 +506,9 @@ MeshTest::Write_csv(){
         } else { 
           v_string.push_back(header + "\n");
         }
+        hasHeader = true;
       }
+      if(!hasHeader) { v_string.push_back(header + "\n"); }
       myReport.close(); //close the file object.
     }
 
