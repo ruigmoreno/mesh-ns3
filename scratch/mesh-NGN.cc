@@ -132,13 +132,13 @@ private:
 };
 MeshTest::MeshTest () :
   m_xSize (2),
-  m_ySize (1),
+  m_ySize (2),
   m_standardPhy(1), //1 a / 2 b / 3 g
   m_numFlows(1),
-  m_step (80),
+  m_step (70),  // 70 m of distance
   m_randomStart (0.1),
   m_totalTime (30.0),
-  m_packetInterval (0.1),
+  m_packetInterval (0.01),
   m_timeStartFlowSources(1),
   m_packetSize (1024),
   m_nIfaces (1),
@@ -156,9 +156,10 @@ MeshTest::MeshTest () :
 void
 MeshTest::Configure (int argc, char *argv[])
 {
-  std::cout << "argc: " << argc << ";" << std::endl;  
-  std::cout <<"argv[0]: " << argv[0] << std::endl;
-  std::cout <<"argv[1]: " << argv[1] << std::endl;
+  // std::cout << "argc: " << argc << ";" << std::endl;  
+  // std::cout <<"argv[0]: " << argv[0] << std::endl;
+  // std::cout <<"argv[1]: " << argv[1] << std::endl;
+  // std::cout <<"argv[2]: " << argv[2] << std::endl;
   CommandLine cmd;
   cmd.AddValue ("x-size", "Number of nodes in a row grid", m_xSize);
   cmd.AddValue ("y-size", "Number of rows in a grid", m_ySize);
@@ -193,9 +194,9 @@ enum WifiPhyStandard getEnumFromString(int phy)
     {   case 1:
             return WIFI_PHY_STANDARD_80211a; //OFDM PHY 5 GHz
         case 2:
-            return WIFI_PHY_STANDARD_80211b;//2.4 GHz
+            return WIFI_PHY_STANDARD_80211b; //2.4 GHz
         case 3:
-            return WIFI_PHY_STANDARD_80211g;//2.4 GHz
+            return WIFI_PHY_STANDARD_80211g; //2.4 GHz
         //case 4:
             //return WIFI_PHY_STANDARD_80211n_2_4GHZ; //n funciona
         //case 5: 
@@ -332,14 +333,14 @@ MeshTest::InstallApplication ()
   clientApps.Start (Seconds (0.0));
   clientApps.Stop (Seconds (m_totalTime));*/
   
-  int sources[m_numFlows];
-  int candidateSource;
-  int limit = ((m_xSize*m_ySize)-1);
+  // int sources[m_numFlows]; /// Carina
+  // int candidateSource; /// Carina
+  // int limit = ((m_xSize*m_ySize)-1); /// Carina
 
   UdpServerHelper server (9);
   //node 0 is always the server
   ApplicationContainer serverApps = server.Install (nodes.Get (0));
-  serverApps.Start (Seconds (0.0));
+  serverApps.Start (Seconds (0.0));   /// Server will start at the time 0 s.
   serverApps.Stop (Seconds (m_totalTime));
 
   UdpClientHelper client (interfaces.GetAddress (0), 9);
@@ -347,10 +348,11 @@ MeshTest::InstallApplication ()
   client.SetAttribute ("Interval", TimeValue (Seconds (m_packetInterval)));
   client.SetAttribute ("PacketSize", UintegerValue (m_packetSize));
 
-  //ApplicationContainer clientApps = client.Install (nodes.Get (m_xSize*m_ySize-1));
-  //clientApps.Start (Seconds (10.0));
-  //clientApps.Stop (Seconds (m_totalTime));
-  ApplicationContainer clientApps;
+  ApplicationContainer clientApps = client.Install (nodes.Get (m_xSize*m_ySize-1));
+  clientApps.Start (Seconds (10.0));
+  clientApps.Stop (Seconds (m_totalTime - 1));
+  /** Carina **/
+  /* ApplicationContainer clientApps;
   srand(time(NULL));
   for (int index=0; index < m_numFlows; ++index) {
       //std::cout << "Flow " << (index+1)<< "\n" ;
@@ -366,94 +368,89 @@ MeshTest::InstallApplication ()
       clientApps.Start (Seconds (m_timeStartFlowSources*(0.01*candidateSource)));
   }
   clientApps.Stop (Seconds (Seconds (m_totalTime-2)));
+  */
 
 }
 int
 MeshTest::Run ()
 {
-  int counterNbFlow = 0;
-  int count = 0;
+  CreateNodes ();
+  InstallInternetStack ();
+  InstallApplication ();
 
-  // while (counterNbFlow < m_samples-1 ) 
-  // {
-    CreateNodes ();
-    InstallInternetStack ();
-    InstallApplication ();
-
-    FlowMonitorHelper flowmon;
-    Ptr<FlowMonitor> monitor = flowmon.InstallAll ();
-    std::vector< ns3::Ptr<ns3::FlowProbe> > flowProbes = monitor->GetAllProbes ();
+  FlowMonitorHelper flowmon;
+  Ptr<FlowMonitor> monitor = flowmon.InstallAll ();
+  std::vector< ns3::Ptr<ns3::FlowProbe> > flowProbes = monitor->GetAllProbes ();
 
 
-    Simulator::Schedule (Seconds (m_totalTime), &MeshTest::Report, this);
-    Simulator::Stop (Seconds (m_totalTime));
-    Simulator::Run ();
+  Simulator::Schedule (Seconds (m_totalTime), &MeshTest::Report, this);
+  Simulator::Stop (Seconds (m_totalTime));
+  Simulator::Run ();
 
-    monitor->SerializeToXmlFile("results.xml", true, true);
-    monitor->CheckForLostPackets ();
+  monitor->SerializeToXmlFile("results.xml", true, true);
+  monitor->CheckForLostPackets ();
 
-    Ptr<Ipv4FlowClassifier> classifier = DynamicCast<Ipv4FlowClassifier> (flowmon.GetClassifier ());
-    std::map<FlowId, FlowMonitor::FlowStats> stats = monitor->GetFlowStats ();
-    for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin (); i != stats.end (); ++i)
+  Ptr<Ipv4FlowClassifier> classifier = DynamicCast<Ipv4FlowClassifier> (flowmon.GetClassifier ());
+  std::map<FlowId, FlowMonitor::FlowStats> stats = monitor->GetFlowStats ();
+  for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin (); i != stats.end (); ++i)
+  {
+    Ipv4FlowClassifier::FiveTuple t = classifier->FindFlow (i->first);
+    if (i->second.rxBytes > 0) 
     {
-      Ipv4FlowClassifier::FiveTuple t = classifier->FindFlow (i->first);
-      if (i->second.rxBytes > 0) 
-      {
-        std::cout << "  Wireless Mesh Network IEEE ";
-        switch (m_standardPhy)
-        {
-        case 1:
-          std::cout << "802.11a" << std::endl;
-          break;
+    //   std::cout << "  Wireless Mesh Network IEEE ";
+    //   switch (m_standardPhy)
+    //   {
+    //   case 1:
+    //     std::cout << "802.11a" << std::endl;
+    //     break;
 
-        case 2:
-          std::cout << "802.11b" << std::endl;
-          break;
+    //   case 2:
+    //     std::cout << "802.11b" << std::endl;
+    //     break;
 
-        case 3:
-          std::cout << "802.11g" << std::endl;
-          break;
-        
-        default:
-          break;
-        }
-        delivery_rate = (i->second.rxPackets * 100.0)/ (i->second.txPackets);
-        throughput = i->second.rxBytes * 8.0 / 10.0 / 1024 / 1024;
-        delay_mean = (i->second.delaySum.GetSeconds()) / (i->second.rxPackets);
-        jitter_mean = (i->second.jitterSum.GetSeconds()) / (i->second.rxPackets -1);
+    //   case 3:
+    //     std::cout << "802.11g" << std::endl;
+    //     break;
+      
+    //   default:
+    //     break;
+    //   }
+      delivery_rate = (i->second.rxPackets * 100.0)/ (i->second.txPackets);
+      throughput = i->second.rxBytes * 8.0 / 10.0 / 1024 / 1024;
+      delay_mean = (i->second.delaySum.GetSeconds()) / (i->second.rxPackets);
+      jitter_mean = (i->second.jitterSum.GetSeconds()) / (i->second.rxPackets -1);
 
-        std::cout << "  Flow " << i->first << " (" << t.sourceAddress << " -> " << t.destinationAddress << ")\n";
-        std::cout << "  DeliveyRate:                 " << delivery_rate << " %\n";
-        std::cout << "  Throughput:                  " << throughput  << " Mbps\n";
-        std::cout << "  TxBytes:                     " << i->second.txBytes << "\n";
-        std::cout << "  RxBytes:                     " << i->second.rxBytes << "\n";
-        std::cout << "  TxPackets:                   " << i->second.txPackets << "\n";
-        std::cout << "  RxPackets:                   " << i->second.rxPackets << "\n";
-        //std::cout << "  LostPackets:	               " << (i->second.lostPackets) << "\n";
-        //std::cout << "  DelaySum:                    " << i->second.delaySum.GetSeconds()<< " s\n";
-        std::cout << "  DelayMean:                   " << delay_mean << " s\n";
-        //std::cout << "  JitterSum:                   " << i->second.jitterSum.GetSeconds()<< " s\n";
-        std::cout << "  JitterMean:                  " << jitter_mean << " s\n";
-        std::cout << "  TimeFirstTxPacket:           " << i->second.timeFirstTxPacket.GetSeconds() << " s\n";
-        std::cout << "  TimeLastTxPacket:            " << i->second.timeLastTxPacket.GetSeconds() << " s\n";
-        std::cout << "  TimeFirstRxPacket:           " << i->second.timeFirstRxPacket.GetSeconds() << " s\n";
-        std::cout << "  TimeLastRxPacket:            " << i->second.timeLastRxPacket.GetSeconds() << " s\n";
-        //std::cout << "  MeanTransmittedPacketSize:   " << (i->second.txBytes) / (i->second.txPackets) << " byte\n";
-        //std::cout << "  MeanTransmittedBitrate:      " << ((i->second.txBytes) * 8.0) / ((i->second.timeLastTxPacket.GetSeconds())-(i->second.timeFirstTxPacket.GetSeconds())) << " bit/s\n";
-        //std::cout << "  MeanHopCount:                " << (i->second.timesForwarded) / (i->second.rxPackets) + 1 << "\n";
-        //std::cout << "  PacketLossRatio:             " << (i->second.lostPackets) / ((i->second.rxPackets)+(i->second.lostPackets)) << "\n";
-        //std::cout << "  MeanReceivedPacketSize:      " << (i->second.rxBytes) / (i->second.rxPackets) << " byte\n";
-        //std::cout << "  MeanReceivedBitrate:         " << ((i->second.rxBytes)* 8.0) / ((i->second.timeLastRxPacket.GetSeconds())-(i->second.timeFirstRxPacket.GetSeconds())) << " bit/s \n";
+      std::cout << "  Flow " << i->first << " (" << t.sourceAddress << " -> " << t.destinationAddress << ")\n";
+      std::cout << "  DeliveyRate:                 " << delivery_rate << " %\n";
+      std::cout << "  Throughput:                  " << throughput  << " Mbps\n";
+      // std::cout << "  TxBytes:                     " << i->second.txBytes << "\n";
+      // std::cout << "  RxBytes:                     " << i->second.rxBytes << "\n";
+      // std::cout << "  TxPackets:                   " << i->second.txPackets << "\n";
+      // std::cout << "  RxPackets:                   " << i->second.rxPackets << "\n";
+      // //std::cout << "  LostPackets:	               " << (i->second.lostPackets) << "\n";
+      // //std::cout << "  DelaySum:                    " << i->second.delaySum.GetSeconds()<< " s\n";
+      std::cout << "  DelayMean:                   " << delay_mean << " s\n";
+      // //std::cout << "  JitterSum:                   " << i->second.jitterSum.GetSeconds()<< " s\n";
+      std::cout << "  JitterMean:                  " << jitter_mean << " s\n";
+      // std::cout << "  TimeFirstTxPacket:           " << i->second.timeFirstTxPacket.GetSeconds() << " s\n";
+      // std::cout << "  TimeLastTxPacket:            " << i->second.timeLastTxPacket.GetSeconds() << " s\n";
+      // std::cout << "  TimeFirstRxPacket:           " << i->second.timeFirstRxPacket.GetSeconds() << " s\n";
+      // std::cout << "  TimeLastRxPacket:            " << i->second.timeLastRxPacket.GetSeconds() << " s\n";
+      //std::cout << "  MeanTransmittedPacketSize:   " << (i->second.txBytes) / (i->second.txPackets) << " byte\n";
+      //std::cout << "  MeanTransmittedBitrate:      " << ((i->second.txBytes) * 8.0) / ((i->second.timeLastTxPacket.GetSeconds())-(i->second.timeFirstTxPacket.GetSeconds())) << " bit/s\n";
+      //std::cout << "  MeanHopCount:                " << (i->second.timesForwarded) / (i->second.rxPackets) + 1 << "\n";
+      //std::cout << "  PacketLossRatio:             " << (i->second.lostPackets) / ((i->second.rxPackets)+(i->second.lostPackets)) << "\n";
+      //std::cout << "  MeanReceivedPacketSize:      " << (i->second.rxBytes) / (i->second.rxPackets) << " byte\n";
+      //std::cout << "  MeanReceivedBitrate:         " << ((i->second.rxBytes)* 8.0) / ((i->second.timeLastRxPacket.GetSeconds())-(i->second.timeFirstRxPacket.GetSeconds())) << " bit/s \n";
 
-        counterNbFlow++;
-      }
     }
-    count++;
-    // vec(m_samples, scond.)
-    std::cout << "Counter: " << count << std::endl;
-    MeshTest::Write_csv ();
-    Simulator::Destroy ();
-  // }
+  }
+  // std::cerr << m_packetInterval << std::endl;
+  // std::cerr << m_packetSize << std::endl;
+  // vec(m_samples, scond.);
+  MeshTest::Write_csv ();
+  Simulator::Destroy ();
+
   return 0;
 }
 void
@@ -528,7 +525,7 @@ MeshTest::Write_csv(){
       {
         myReport << s;
       });
-      std::cerr << filename << " was writted with successfuly!" << std::endl;
+      std::cerr << filename << " was writted with successfully!" << std::endl;
     }
     myReport.close();
 }
