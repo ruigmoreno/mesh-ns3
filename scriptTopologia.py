@@ -1,23 +1,20 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-#
-# Autor: Ricardo Lenz
-# Data: 23/jan/2018
-#
 import os, cairo, lxml, lxml.etree
+from math import pi
 
 ARQ = 'logMeshSimulationDiscovery.txt'
-XML_DIR = 'report'
+XML_DIR = './'
 IMG_W, IMG_H = 700, 700
 
 class Node:
-    def __init__(self, id,x,y):
+    def __init__(self, id, x, y):
         self.id = id
         self.x, self.y = x, y
         self.vizinhos = []
         self.addr = ''
 
-def find_node_by_addr(addr, nodes):
+def findNodeByAddr(addr, nodes):
     for nd in nodes:
         if nd.addr == addr:
             return nd.id
@@ -42,10 +39,11 @@ def main():
     
     min_vz, max_vz = 1000, -1000
     arqs = os.listdir(XML_DIR)
+
     for arq in arqs:
         arq = os.path.join( XML_DIR, arq )
-        if os.path.splitext(arq)[1] != '.xml': continue
-        
+        if (os.path.splitext(arq)[1] != '.xml' or os.path.split(arq)[1] == 'results.xml'): continue
+
         node_i = int( os.path.splitext(arq)[0].split('-')[-1] )
         s = open(arq).read()
         t = lxml.etree.fromstring( s )
@@ -58,22 +56,24 @@ def main():
         min_vz, max_vz = min( min_vz, len(nd.vizinhos) ), max( max_vz, len(nd.vizinhos) )
 
     min_vz, max_vz = float(min_vz), float(max_vz)        
+    
     for nd in nodes:
         nd.nz = float( (len(nd.vizinhos) - min_vz) ) / (max_vz - min_vz)
 
-    surf = cairo.SVGSurface( "grafico.svg", IMG_W, IMG_H )
+    surf = cairo.SVGSurface( "graph.svg", IMG_W, IMG_H )
     cr = cairo.Context( surf )
-    cr.set_source_rgb(1,1,0)
+    ## Set background color
+    cr.set_source_rgb(1,1,1)
     cr.paint()
     cr.select_font_face( "Arial" )
     cr.set_font_size( 15 )
-    
+
     for nd in nodes:
-        print ("Nó %d: addr = %s, x = %f, y = %f, vzs = %d [%f]" % \
+        print ("Node %d: addr = %s, x = %f, y = %f, vzs = %d [%f]" % \
             (nd.id, nd.addr, nd.x, nd.y, len(nd.vizinhos), nd.nz ))
         for vz in nd.vizinhos:
-            vz_i = find_node_by_addr( vz, nodes )
-            print ("  - %s (nó %d)" % (vz, vz_i))
+            vz_i = findNodeByAddr( vz, nodes )
+            print ("  - %s (node %d)" % (vz, vz_i))
         
         fx = (nd.x - min_x) / (max_x - min_x)
         fy = (nd.y - min_y) / (max_y - min_y)
@@ -90,16 +90,16 @@ def main():
         grad.add_color_stop_rgba( 1.0,  1,1,0,0 )
         cr.set_source( grad )
         cr.new_path()
-        cr.arc( nd.px, nd.py, 100,  0, 2*3.1415 )
+        cr.arc( nd.px, nd.py, 100,  0, 2*pi )
         cr.close_path()        
         cr.fill()            
         cr.new_path()
-        cr.arc( nd.px, nd.py, 8,  0, 2*3.1415 )
+        cr.arc( nd.px, nd.py, 8,  0, 2*pi )
         cr.close_path()        
         cr.fill()
                 
         for vz in nd.vizinhos:
-            vz_nd = nodes[ find_node_by_addr(vz, nodes) ]
+            vz_nd = nodes[ findNodeByAddr(vz, nodes) ]
             cr.set_source_rgb( 0,0,1 )
             cr.move_to( nd.px, nd.py ) 
             cr.line_to( vz_nd.px, vz_nd.py )            
@@ -112,6 +112,6 @@ def main():
 
     surf.show_page()
     surf.finish()
-    print ("OK, imagem gerada.")
+    print ("OK! Figure was generated.")
                 
 main()

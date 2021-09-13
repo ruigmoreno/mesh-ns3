@@ -3,6 +3,7 @@ bindings/python/**
 build/**
 doc/**
 examples/**
+mesh-traces/**
 
 # Data or results files from simulations
 *.xml

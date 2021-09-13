@@ -128,7 +128,7 @@ private:
   /// Print mesh devices diagnostics
   void Report ();
   // Print mesh parameters
-  void Write_csv();
+  void WriteReportInCsv();
 };
 MeshTest::MeshTest () :
   m_xSize (2),
@@ -448,7 +448,7 @@ MeshTest::Run ()
   // std::cerr << m_packetInterval << std::endl;
   // std::cerr << m_packetSize << std::endl;
   // vec(m_samples, scond.);
-  MeshTest::Write_csv ();
+  MeshTest::WriteReportInCsv ();
   Simulator::Destroy ();
 
   return 0;
@@ -474,7 +474,7 @@ MeshTest::Report ()
     }
 }
 void
-MeshTest::Write_csv(){
+MeshTest::WriteReportInCsv(){
 
     // Create an output filestream object
     std::string filename = "mp-report.csv";
