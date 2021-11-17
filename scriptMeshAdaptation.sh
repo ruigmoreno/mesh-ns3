@@ -31,7 +31,7 @@ configureScenario(){
 
     #UNIFORM DISK
     #nb_nodes=81
-    radius=320
+    radius=300
     #root=0
     path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
     
@@ -283,7 +283,7 @@ run(){
                     mkdir -p $path_traces_topology/discovery/report
                     mv logMeshSimulationDiscovery.txt   $path_traces_topology/discovery
                     mv logMeshSimulationTopology.txt    $path_traces_topology/discovery
-                    mv topology*.png                     $path_traces_topology/discovery
+                    #mv topology*.png                     $path_traces_topology/discovery
                     mv mesh-report-*.xml                $path_traces_topology/discovery/report
                     #mv checked*.dot 	      	    $path_traces_topology/discovery
                     #//////////////////////////////
@@ -302,9 +302,9 @@ run(){
                 mkdir -p $path_traces_topology/discovery/report
                 mv logMeshSimulationDiscovery.txt  $path_traces_topology/discovery/
                 mv logMeshSimulationTopology.txt   $path_traces_topology/discovery/
-                mv topology*.png                     $path_traces_topology/discovery
+                #mv topology*.png                     $path_traces_topology/discovery
                 mv mesh-report-*.xml   		    $path_traces_topology/discovery/report
-                #	mv checked*.dot 	      	    $path_traces_topology/discovery
+                #mv checked*.dot 	      	    $path_traces_topology/discovery
                 #//////////////////////////////
 
                 echo "Topology $current_topology is CONNECTED. Check started flows..."

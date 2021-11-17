@@ -8,6 +8,7 @@ mesh-traces/**
 # Data or results files from simulations
 *.xml
 *.csv
+checked*.dot
 output.txt
 
 # Prerequisites
