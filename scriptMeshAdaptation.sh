@@ -245,52 +245,52 @@ run(){
         #remove old traces
         #rm -rf $path_traces
 
-        #AJEITAR
+
         for ((  current_topology = 1 ;  current_topology <= $nb_sim_topologies_experiments;  current_topology++  ))
         do
 
-                if [ $nb_topologies_failed_attempts -eq $max_topologies_attempts ]
-                then
+            if [ $nb_topologies_failed_attempts -eq $max_topologies_attempts ]
+            then
 
-                    alert
-                    echo "ALERT(1)! Simulation stopped after $max_topologies_attempts topologies attempts. Better try another configuration."
-                    echo "**Simulation stopped after $max_topologies_attempts topologies attempts**" >> logMeshTopologyConnectivity.txt 2>&1
-                    mv logMeshTopologyConnectivity.txt $path_traces
+                alert
+                echo "ALERT(1)! Simulation stopped after $max_topologies_attempts topologies attempts. Better try another configuration."
+                echo "**Simulation stopped after $max_topologies_attempts topologies attempts**" >> logMeshTopologyConnectivity.txt 2>&1
+                mv logMeshTopologyConnectivity.txt $path_traces
 
-                    #stop simulation
-                    exit
-                fi
+                #stop simulation
+                exit
+            fi
 
-                checkTopologyConnected
+            checkTopologyConnected
 
-                #-------------------------------#
-                # Check if topology is connected
-                #-------------------------------#
+            #-------------------------------#
+            # Check if topology is connected
+            #-------------------------------#
 
-                python3 ./check.py
+            python3 ./check.py
 
-                if [ $? -eq 1 ]
-                then
+            if [ $? -eq 1 ] # the command ? represents the last status of the last function that have executed.
+            then
 
-                    nb_topologies_failed_attempts=`expr $nb_topologies_failed_attempts + 1`
-                    nb_sim_topologies_experiments=`expr $nb_sim_topologies_experiments + 1`
+                nb_topologies_failed_attempts=`expr $nb_topologies_failed_attempts + 1`
+                nb_sim_topologies_experiments=`expr $nb_sim_topologies_experiments + 1`
 
-                    #//////////////////////////////
-                    #save failed topology traces
-                    echo "Topology $current_topology is NOT CONNECTED" >> logMeshTopologyConnectivity.txt 2>&1
-                    path_traces_topology=$path_traces/topology-$current_topology-NOT-CONNECTED
-                    #rm -rf $path_traces_topology
-                    mkdir -p $path_traces_topology/discovery/report
-                    mv logMeshSimulationDiscovery.txt   $path_traces_topology/discovery
-                    mv logMeshSimulationTopology.txt    $path_traces_topology/discovery
-                    #mv topology*.png                     $path_traces_topology/discovery
-                    mv mesh-report-*.xml                $path_traces_topology/discovery/report
-                    #mv checked*.dot 	      	    $path_traces_topology/discovery
-                    #//////////////////////////////
+                #//////////////////////////////
+                #save failed topology traces
+                echo "Topology $current_topology is NOT CONNECTED" >> logMeshTopologyConnectivity.txt 2>&1
+                path_traces_topology=$path_traces/topology-$current_topology-NOT-CONNECTED
+                #rm -rf $path_traces_topology
+                mkdir -p $path_traces_topology/discovery/report
+                mv logMeshSimulationDiscovery.txt   $path_traces_topology/discovery
+                mv logMeshSimulationTopology.txt    $path_traces_topology/discovery
+                #mv topology*.png                     $path_traces_topology/discovery
+                mv mesh-report-*.xml                $path_traces_topology/discovery/report
+                #mv checked*.dot 	      	    $path_traces_topology/discovery
+                #//////////////////////////////
 
-                    echo "Topology $current_topology is NOT connected. $nb_topologies_failed_attempts/$max_topologies_attempts failed topologies attempts / nb_sim_topologies_experiments=$nb_sim_topologies_experiments "
+                echo "Topology $current_topology is NOT connected. $nb_topologies_failed_attempts/$max_topologies_attempts failed topologies attempts / nb_sim_topologies_experiments=$nb_sim_topologies_experiments "
 
-                else
+            else
 
                 nb_rounds_failed_attempts=0
                 discovery=0
@@ -304,7 +304,10 @@ run(){
                 mv logMeshSimulationTopology.txt   $path_traces_topology/discovery/
                 #mv topology*.png                     $path_traces_topology/discovery
                 mv mesh-report-*.xml   		    $path_traces_topology/discovery/report
-                #mv checked*.dot 	      	    $path_traces_topology/discovery
+                if [ -f checked*.dot]
+                then
+                    mv checked*.dot 	      	    $path_traces_topology/discovery
+                fi
                 #//////////////////////////////
 
                 echo "Topology $current_topology is CONNECTED. Check started flows..."
@@ -330,24 +333,24 @@ run(){
                 #nb_sim_rounds_experiments=$nb_sim_rounds
 
 
-                for ((  current_round = 1 ;  current_round <= $nb_sim_rounds;  current_round++))
-                do
+                    for ((  current_round = 1 ;  current_round <= $nb_sim_rounds;  current_round++))
+                    do
 
-                    echo "-----------------------------------------------"
-                    echo "ROUND $current_round of $nb_sim_rounds"
+                        echo "-----------------------------------------------"
+                        echo "ROUND $current_round of $nb_sim_rounds"
 
-                    #root issues
-#id_root=`expr $root + 1`
-#                    id_intf=`expr $id_root \* $current_interface - $current_interface + 1`
-#                   valor=$(echo "ibase=10;obase=16;$id_intf" | bc) #convert decimal to hexa
-#                    echo "Root is node $id_root (address mac decimal=$id_intf hexa=$valor)"
-#                    echo "Root ID NS3 = $id_root / Root MAC Address 1º interface = 00:00:00:00:00:$valor"
+                        #root issues
+                        #id_root=`expr $root + 1`
+                        #                    id_intf=`expr $id_root \* $current_interface - $current_interface + 1`
+                        #                   valor=$(echo "ibase=10;obase=16;$id_intf" | bc) #convert decimal to hexa
+                        #                    echo "Root is node $id_root (address mac decimal=$id_intf hexa=$valor)"
+                        #                    echo "Root ID NS3 = $id_root / Root MAC Address 1º interface = 00:00:00:00:00:$valor"
 
-# --standardPhy=$standardPhy
-#--pps=$nb_pps
-#--idRoot=$root
-#--ipRoot=10.1.1.$id_root
-#--root=00:00:00:00:00:$valor
+                        # --standardPhy=$standardPhy
+                        #--pps=$nb_pps
+                        #--idRoot=$root
+                        #--ipRoot=10.1.1.$id_root
+                        #--root=00:00:00:00:00:$valor
 
 
                         ### UNIFORM DISK ###
@@ -367,85 +370,83 @@ run(){
 
 
 
-                    #check flows have started
-                    nb_not_started_flow=`grep -c 'Flow Not Started:' logMeshSimulation.txt`
-                    echo "Not started flow:" $nb_not_started_flow
+                        #check flows have started
+                        nb_not_started_flow=`grep -c 'Flow Not Started:' logMeshSimulation.txt`
+                        echo "Not started flow:" $nb_not_started_flow
 
 
-                    ##############################
-                    #Save final simulation traces
-                    path_traces_round=$path_traces_topology/round-$current_round
-                    mkdir -p $path_traces_round/report
-                    #rm -rf $path_traces_round/report/*
+                        ##############################
+                        #Save final simulation traces
+                        path_traces_round=$path_traces_topology/round-$current_round
+                        mkdir -p $path_traces_round/report
+                        #rm -rf $path_traces_round/report/*
 
-                    mv mesh-report-*.xml $path_traces_round/report/
+                        mv mesh-report-*.xml $path_traces_round/report/
 
-                    if [ $pcap -eq 1 ]
-                    then
-                        mkdir -p $path_traces_round/pcap
-                        rm -rf $path_traces_round/pcap/*
-                        mv *.pcap $path_traces_round/pcap/
-                    fi
-
-                    mv logMeshSimulation.txt $path_traces_round/
-                    mv results.xml $path_traces_round/.
-                    #mv mesh-final.txt $path_traces_round/.
-                    #mv MeshMultiInterface.tr $path_traces/.
-
-                    #mv checked*.dot $path_traces/
-                    ##############################
-
-                    if [ $nb_not_started_flow -eq 0 ]
-                    then
-                        #echo "All flows OK ($nb_not_started_flow)."
-                        #echo "current_round=$current_round / nb_sim_rounds=$nb_sim_rounds"
-
-                        if [ $current_round -eq $nb_sim_rounds ]
+                        if [ $pcap -eq 1 ]
                         then
-                            echo "-> Topology $current_topology CONNECTED with all flows initialized"
-                            echo "Topology $current_topology CONNECTED -> Topology $nb_sim_topologies_connected" >> logMeshTopologyConnectivity.txt 2>&1
-                            nb_sim_topologies_connected=`expr $nb_sim_topologies_connected + 1`
+                            mkdir -p $path_traces_round/pcap
+                            rm -rf $path_traces_round/pcap/*
+                            mv *.pcap $path_traces_round/pcap/
                         fi
 
-                    else
-                    nb_rounds_failed_attempts=`expr $nb_rounds_failed_attempts + 1`
+                        mv logMeshSimulation.txt $path_traces_round/
+                        mv results.xml $path_traces_round/.
+                        #mv mesh-final.txt $path_traces_round/.
+                        #mv MeshMultiInterface.tr $path_traces/.
 
-                    if [ $nb_rounds_failed_attempts -eq $max_rounds_attempts ]
-                    then
+                        mv checked*.dot $path_traces/
+                        ##############################
 
-                    nb_sim_topologies_experiments=`expr $nb_sim_topologies_experiments + 1`
-                    nb_topologies_failed_attempts=`expr $nb_topologies_failed_attempts + 1`
+                        if [ $nb_not_started_flow -eq 0 ]
+                        then
+                            #echo "All flows OK ($nb_not_started_flow)."
+                            #echo "current_round=$current_round / nb_sim_rounds=$nb_sim_rounds"
 
-                    echo "Topology $current_topology CONNECTED, BUT PROBLEM WITH FLOWS" >> logMeshTopologyConnectivity.txt 2>&1
+                            if [ $current_round -eq $nb_sim_rounds ]
+                            then
+                                echo "-> Topology $current_topology CONNECTED with all flows initialized"
+                                echo "Topology $current_topology CONNECTED -> Topology $nb_sim_topologies_connected" >> logMeshTopologyConnectivity.txt 2>&1
+                                nb_sim_topologies_connected=`expr $nb_sim_topologies_connected + 1`
+                            fi
 
-                    #change traces folder name
-                    mv $path_traces_topology $path_traces/topology-$current_topology-PROBLEM-FLOWS
+                        else
+                            nb_rounds_failed_attempts=`expr $nb_rounds_failed_attempts + 1`
 
-                    alert
-                    echo "ALERT(3)! $nb_rounds_failed_attempts/$max_rounds_attempts rounds attempts. $nb_topologies_failed_attempts/$max_topologies_attempts topologies attempts. Better try another topology."
+                            if [ $nb_rounds_failed_attempts -eq $max_rounds_attempts ]
+                            then
+                                nb_sim_topologies_experiments=`expr $nb_sim_topologies_experiments + 1`
+                                nb_topologies_failed_attempts=`expr $nb_topologies_failed_attempts + 1`
 
-                    #skip topology
-                    break
+                                echo "Topology $current_topology CONNECTED, BUT PROBLEM WITH FLOWS" >> logMeshTopologyConnectivity.txt 2>&1
 
-                    fi
+                                #change traces folder name
+                                mv $path_traces_topology $path_traces/topology-$current_topology-PROBLEM-FLOWS
 
-                    alert
-                    echo "ALERT(4)! $nb_rounds_failed_attempts/$max_rounds_attempts rounds attempts. Let's try again this round..."
-                    echo "nb_sim_topologies_experiments=$nb_sim_topologies_experiments nb_sim_topologies_connected=$nb_sim_topologies_connected"
+                                alert
+                                echo "ALERT(3)! $nb_rounds_failed_attempts/$max_rounds_attempts rounds attempts. $nb_topologies_failed_attempts/$max_topologies_attempts topologies attempts. Better try another topology."
 
-                    #repeat round
-                    current_round=`expr $current_round - 1`
-                    #break
+                                #skip topology
+                                break
+                            fi
 
-                    fi
+                            alert
+                            echo "ALERT(4)! $nb_rounds_failed_attempts/$max_rounds_attempts rounds attempts. Let's try again this round..."
+                            echo "nb_sim_topologies_experiments=$nb_sim_topologies_experiments nb_sim_topologies_connected=$nb_sim_topologies_connected"
 
-                done # for [current_round]
+                            #repeat round
+                            current_round=`expr $current_round - 1`
+                            #break
 
-                #nb_flows=`expr $nb_flows + $interval_nb_Flows`
+                        fi
+
+                    done # for [current_round]
+
+                    #nb_flows=`expr $nb_flows + $interval_nb_Flows`
 
                 #done # while [ nbFlows ]
 
-                fi # if [ connected ]
+            fi # if [ connected ]
 
         done #current_topology
 
