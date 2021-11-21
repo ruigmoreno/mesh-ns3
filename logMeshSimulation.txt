@@ -1,0 +1,4 @@
+Waf: Entering directory `/home/pixidu/workspace/ns-allinone-3.29/ns-3.29/build/optimized'
+Waf: Leaving directory `/home/pixidu/workspace/ns-allinone-3.29/ns-3.29/build/optimized'
+Build commands will be stored in build/optimized/compile_commands.json
+'build' finished successfully (9.009s)

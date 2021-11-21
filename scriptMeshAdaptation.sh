@@ -285,7 +285,10 @@ run(){
                 mv logMeshSimulationTopology.txt    $path_traces_topology/discovery
                 #mv topology*.png                     $path_traces_topology/discovery
                 mv mesh-report-*.xml                $path_traces_topology/discovery/report
-                #mv checked*.dot 	      	    $path_traces_topology/discovery
+                if [ -f checked*.dot ]
+                then
+                    mv checked*.dot 	      	    $path_traces_topology/discovery
+                fi                
                 #//////////////////////////////
 
                 echo "Topology $current_topology is NOT connected. $nb_topologies_failed_attempts/$max_topologies_attempts failed topologies attempts / nb_sim_topologies_experiments=$nb_sim_topologies_experiments "
@@ -304,7 +307,7 @@ run(){
                 mv logMeshSimulationTopology.txt   $path_traces_topology/discovery/
                 #mv topology*.png                     $path_traces_topology/discovery
                 mv mesh-report-*.xml   		    $path_traces_topology/discovery/report
-                if [ -f checked*.dot]
+                if [ -f checked*.dot ]
                 then
                     mv checked*.dot 	      	    $path_traces_topology/discovery
                 fi
@@ -394,8 +397,10 @@ run(){
                         mv results.xml $path_traces_round/.
                         #mv mesh-final.txt $path_traces_round/.
                         #mv MeshMultiInterface.tr $path_traces/.
-
-                        mv checked*.dot $path_traces/
+                        # if [ -f checked*.dot ]
+                        # then
+                        #     mv checked*.dot 	      	    $path_traces/
+                        # fi
                         ##############################
 
                         if [ $nb_not_started_flow -eq 0 ]

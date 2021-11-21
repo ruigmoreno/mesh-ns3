@@ -1,0 +1,3210 @@
+[H[2J[3J81 nodes
+-- 1 interval
+--- 1 flows
+---- 16 packet size
+80211a
+Parameters : 81 nodes / 16 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 32 packet size
+80211a
+Parameters : 81 nodes / 32 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 64 packet size
+80211a
+Parameters : 81 nodes / 64 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 128 packet size
+80211a
+Parameters : 81 nodes / 128 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 256 packet size
+80211a
+Parameters : 81 nodes / 256 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 512 packet size
+80211a
+Parameters : 81 nodes / 512 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 750 packet size
+80211a
+Parameters : 81 nodes / 750 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 1024 packet size
+80211a
+Parameters : 81 nodes / 1024 packetSize / 1 flows / packetInterval 1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+-- 0.1 interval
+--- 1 flows
+---- 16 packet size
+80211a
+Parameters : 81 nodes / 16 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 32 packet size
+80211a
+Parameters : 81 nodes / 32 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 64 packet size
+80211a
+Parameters : 81 nodes / 64 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 128 packet size
+80211a
+Parameters : 81 nodes / 128 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 256 packet size
+80211a
+Parameters : 81 nodes / 256 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 512 packet size
+80211a
+Parameters : 81 nodes / 512 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 750 packet size
+80211a
+Parameters : 81 nodes / 750 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 1024 packet size
+80211a
+Parameters : 81 nodes / 1024 packetSize / 1 flows / packetInterval 0.1 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.1
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.1
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.1
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.1
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.1
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.1
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+-- 0.01 interval
+--- 1 flows
+---- 16 packet size
+80211a
+Parameters : 81 nodes / 16 packetSize / 1 flows / packetInterval 0.01 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.01
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.01
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.01
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.01
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.01
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 32 packet size
+80211a
+Parameters : 81 nodes / 32 packetSize / 1 flows / packetInterval 0.01 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.01
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.01
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.01
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.01
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.01
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 64 packet size
+80211a
+Parameters : 81 nodes / 64 packetSize / 1 flows / packetInterval 0.01 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.01
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.01
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.01
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.01
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.01
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 128 packet size
+80211a
+Parameters : 81 nodes / 128 packetSize / 1 flows / packetInterval 0.01 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.01
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 1 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=2 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 2.802469135802469
+Topology 2 is NOT connected. 1/3 failed topologies attempts / nb_sim_topologies_experiments=7 
+################################################################################
+Interface=1 / Topology=3 / Flows=1 / packetInterval=0.01
+ID next topology connected: 2
+################################################################################
+Media num conexoes: 4.111111111111111
+Topology 3 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 3 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=4 / Flows=1 / packetInterval=0.01
+ID next topology connected: 3
+################################################################################
+Media num conexoes: 4.222222222222222
+Topology 4 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 4 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=5 / Flows=1 / packetInterval=0.01
+ID next topology connected: 4
+################################################################################
+Media num conexoes: 3.9012345679012346
+Topology 5 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 5 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=6 / Flows=1 / packetInterval=0.01
+ID next topology connected: 5
+################################################################################
+Media num conexoes: 3.888888888888889
+Topology 6 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 6 CONNECTED with all flows initialized
+################################################################################
+Interface=1 / Topology=7 / Flows=1 / packetInterval=0.01
+ID next topology connected: 6
+################################################################################
+Media num conexoes: 3.728395061728395
+Topology 7 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 6 of 6
+Not started flow: 0
+-> Topology 7 CONNECTED with all flows initialized
+---- 256 packet size
+80211a
+Parameters : 81 nodes / 256 packetSize / 1 flows / packetInterval 0.01 / 6 topologies / 6 rounds per topology
+################################################################################
+Interface=1 / Topology=1 / Flows=1 / packetInterval=0.01
+ID next topology connected: 1
+################################################################################
+Media num conexoes: 4.074074074074074
+Topology 1 is CONNECTED. Check started flows...
+-----------------------------------------------
+ROUND 1 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 2 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 3 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 4 of 6
+Not started flow: 0
+-----------------------------------------------
+ROUND 5 of 6
