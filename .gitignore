@@ -32,6 +32,7 @@ output.txt
 *.dylib
 *.dll
 
+
 # Fortran module files
 *.mod
 *.smod
@@ -41,6 +42,7 @@ output.txt
 *.la
 *.a
 *.lib
+*.lock-waf*
 
 # Executables
 *.exe
