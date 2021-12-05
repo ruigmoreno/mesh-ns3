@@ -4,6 +4,9 @@ build/**
 doc/**
 examples/**
 mesh-traces/**
+waf-tools/**
+.waf*/**
+__pycache__
 
 # Data or results files from simulations
 *.xml
