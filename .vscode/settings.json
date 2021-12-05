@@ -60,5 +60,5 @@
     "cinttypes": "cpp",
     "typeinfo": "cpp"
   },
-  "python.pythonPath": "/usr/bin/python3"
+  "python.defaultInterpreterPath": "python"
 }
