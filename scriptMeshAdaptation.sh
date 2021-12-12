@@ -34,7 +34,6 @@ configureScenario(){
     radius=300
     #root=0
     path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
-    
 
 }
 ################################################################
@@ -63,7 +62,7 @@ configureSimulationParameters(){
 
     #####SIMULATION TIME#####
     timeSimulationDiscovery=10
-    timeSimulation=60
+    timeSimulation=30
 
     standardPhy=1
     getStringPhyLayer $standardPhy
@@ -95,7 +94,7 @@ configureSimulationParameters(){
 
     #UNIFORM DISK
     #topology
-    nb_sim_topologies=6
+    nb_sim_topologies=5
     max_topologies_attempts=3
     max_rounds_attempts=4
 
@@ -344,10 +343,10 @@ run(){
 
                         #root issues
                         #id_root=`expr $root + 1`
-                        #                    id_intf=`expr $id_root \* $current_interface - $current_interface + 1`
-                        #                   valor=$(echo "ibase=10;obase=16;$id_intf" | bc) #convert decimal to hexa
-                        #                    echo "Root is node $id_root (address mac decimal=$id_intf hexa=$valor)"
-                        #                    echo "Root ID NS3 = $id_root / Root MAC Address 1º interface = 00:00:00:00:00:$valor"
+                        #   id_intf=`expr $id_root \* $current_interface - $current_interface + 1`
+                        #   valor=$(echo "ibase=10;obase=16;$id_intf" | bc) #convert decimal to hexa
+                        #   echo "Root is node $id_root (address mac decimal=$id_intf hexa=$valor)"
+                        #   echo "Root ID NS3 = $id_root / Root MAC Address 1º interface = 00:00:00:00:00:$valor"
 
                         # --standardPhy=$standardPhy
                         #--pps=$nb_pps
@@ -471,21 +470,21 @@ configureScenario
 
 
 for nb_nodes in 81 #121 101 61 141
-do 
+do
 
 	echo "$nb_nodes nodes"
 	
-	for packetInterval in 1 0.1 0.01 
+	for packetInterval in 0.1 #1 0.1 0.01
 	do
 	
 		echo "-- $packetInterval interval"
 
-		for nb_flows in 1
+		for nb_flows in 1 10 30 50
 		do
 
 			echo "--- $nb_flows flows"
 		
-			for packetSize in 16 32 64 128 256 512 750 1024 #nao roda: 8 
+			for packetSize in 32 256 1024 #16 #32 64 128  256 512 750 1024 # "packetSize = 8" doesn't work
 			do	
 			
 					echo "---- $packetSize packet size"
