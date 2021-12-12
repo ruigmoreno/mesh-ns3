@@ -11,8 +11,8 @@ __pycache__
 # Data or results files from simulations
 *.xml
 *.csv
+*.txt
 checked*.dot
-output.txt
 
 # Prerequisites
 *.d
