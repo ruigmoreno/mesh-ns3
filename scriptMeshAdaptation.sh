@@ -392,7 +392,7 @@ run(){
                         fi
 
                         mv logMeshSimulation.txt $path_traces_round/
-                        mv results.xml $path_traces_round/.
+                        mv results.xml $path_traces_round/
                         #mv mesh-final.txt $path_traces_round/.
                         #mv MeshMultiInterface.tr $path_traces/.
                         # if [ -f checked*.dot ]
@@ -407,22 +407,22 @@ run(){
                             #echo "All flows OK ($nb_not_started_flow)."
                             #echo "current_round=$current_round / nb_sim_rounds=$nb_sim_rounds"
 
+                            # TODO: create results directory to save data.
+                            # data: axis x (nb_flows),
+                            #       axis y (DeliveryRate, Throughput, DelayMean, JitterMean, ...)
+                            #       function (packetInterval)
+                            # cases: nb_flows
+                            mkdir -p results
+                            grep 'DeliveryRate' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt 2>&1
+                            grep 'Throughput' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt 2>&1
+                            grep 'DelayMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt 2>&1
+                            grep 'JitterMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt 2>&1
+
                             if [ $current_round -eq $nb_sim_rounds ]
                             then
                                 echo "-> Topology $current_topology CONNECTED with all flows initialized"
                                 echo "Topology $current_topology CONNECTED -> Topology $nb_sim_topologies_connected" >> logMeshTopologyConnectivity.txt 2>&1
                                 nb_sim_topologies_connected=`expr $nb_sim_topologies_connected + 1`
-
-                                # TODO: create results directory to save data.
-                                # data: axis x (nb_flows),
-                                #       axis y (DeliveryRate, Throughput, DelayMean, JitterMean, ...)
-                                #       function (packetInterval)
-                                # cases: nb_flows
-                                mkdir -p results
-                                grep 'DeliveryRate' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt
-                                grep 'Throughput' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt
-                                grep 'DelayMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt
-                                grep 'JitterMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt
                             fi
 
                         else
