@@ -289,7 +289,7 @@ MeshJournal::Run ()
         if (i->second.rxBytes > 0)
         {
             std::cout << "  Flow " << i->first << " (" << t.sourceAddress << " -> " << t.destinationAddress << ")\n";
-            std::cout << "  DeliveyRate:                 " << (i->second.rxPackets * 100.0)/ (i->second.txPackets)  << " %\n";
+            std::cout << "  DeliveryRate:                 " << (i->second.rxPackets * 100.0)/ (i->second.txPackets)  << " %\n";
             std::cout << "  Throughput:                  " << i->second.rxBytes * 8.0 / 10.0 / 1024 / 1024  << " Mbps\n";
             std::cout << "  TxBytes:                     " << i->second.txBytes << "\n";
             std::cout << "  RxBytes:                     " << i->second.rxBytes << "\n";
