@@ -340,7 +340,7 @@ run(){
 
                         echo "-----------------------------------------------"
                         echo "ROUND $current_round of $nb_sim_rounds"
-                        path_traces_round=$path_traces_topology/round-$current_round
+                        
                         #root issues
                         #id_root=`expr $root + 1`
                         #   id_intf=`expr $id_root \* $current_interface - $current_interface + 1`
@@ -371,18 +371,6 @@ run(){
                         --pcap=$pcap" > logMeshSimulation.txt 2>&1
 
                         
-                        # TODO: create results directory to save data.
-                        # data: axis x (nb_flows),
-                        #       axis y (DeliveryRate, Throughput, DelayMean, JitterMean, ...)
-                        #       function (packetInterval)
-                        # cases: nb_flows
-                        mkdir -p results
-                        grep 'DeliveryRate' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt
-                        grep 'Throughput' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt
-                        grep 'DelayMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt
-                        grep 'JitterMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt
-
-
                         #check flows have started
                         nb_not_started_flow=`grep -c 'Flow Not Started:' logMeshSimulation.txt`
                         echo "Not started flow:" $nb_not_started_flow
@@ -390,6 +378,7 @@ run(){
 
                         ##############################
                         #Save final simulation traces
+                        path_traces_round=$path_traces_topology/round-$current_round
                         mkdir -p $path_traces_round/report
                         #rm -rf $path_traces_round/report/*
 
@@ -411,6 +400,7 @@ run(){
                         #     mv checked*.dot 	      	    $path_traces/
                         # fi
                         ##############################
+                        
 
                         if [ $nb_not_started_flow -eq 0 ]
                         then
@@ -422,6 +412,17 @@ run(){
                                 echo "-> Topology $current_topology CONNECTED with all flows initialized"
                                 echo "Topology $current_topology CONNECTED -> Topology $nb_sim_topologies_connected" >> logMeshTopologyConnectivity.txt 2>&1
                                 nb_sim_topologies_connected=`expr $nb_sim_topologies_connected + 1`
+
+                                # TODO: create results directory to save data.
+                                # data: axis x (nb_flows),
+                                #       axis y (DeliveryRate, Throughput, DelayMean, JitterMean, ...)
+                                #       function (packetInterval)
+                                # cases: nb_flows
+                                mkdir -p results
+                                grep 'DeliveryRate' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt
+                                grep 'Throughput' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt
+                                grep 'DelayMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt
+                                grep 'JitterMean' $path_traces_rounds/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt
                             fi
 
                         else
@@ -453,6 +454,7 @@ run(){
                             #break
 
                         fi
+                        
 
                     done # for [current_round]
 
