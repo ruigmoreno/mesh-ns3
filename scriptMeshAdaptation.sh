@@ -413,10 +413,10 @@ run(){
                             #       function (packetInterval)
                             # cases: nb_flows
                             mkdir -p results
-                            grep 'DeliveryRate' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt 2>&1
-                            grep 'Throughput' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt 2>&1
-                            grep 'DelayMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt 2>&1
-                            grep 'JitterMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt 2>&1
+                            grep 'DeliveryRate' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt
+                            grep 'Throughput' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt
+                            grep 'DelayMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt
+                            grep 'JitterMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt
 
                             if [ $current_round -eq $nb_sim_rounds ]
                             then
