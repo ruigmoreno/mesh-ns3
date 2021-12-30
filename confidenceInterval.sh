@@ -247,7 +247,7 @@ END {
 						mv[x,j] = mv[x,j] + (v[x,i,j]/samples[x]);
 				}
 				for( i = 1; i <= samples[x]; i++ ) {
-						var_v[x,j] = var_v[x,j] + ((v[x,i,j] - mv[x,j])^2)/(samples[x]-1);
+						var_v[x,j] = var_v[x,j] + (v[x,i,j] - mv[x,j])^2/(samples[x]-1);
 				}
 			  inter_v[x,j] = t[samples[x]] * sqrt(var_v[x,j]/samples[x]);
       }
