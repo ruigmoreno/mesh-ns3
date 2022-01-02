@@ -406,18 +406,6 @@ run(){
                         then
                             #echo "All flows OK ($nb_not_started_flow)."
                             #echo "current_round=$current_round / nb_sim_rounds=$nb_sim_rounds"
-
-                            # TODO: create results directory to save data.
-                            # data: axis x (nb_flows),
-                            #       axis y (DeliveryRate, Throughput, DelayMean, JitterMean, ...)
-                            #       function (packetInterval)
-                            # cases: nb_flows
-                            mkdir -p results
-                            grep 'DeliveryRate' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/deliveryrate.txt
-                            grep 'Throughput' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/throughput.txt
-                            grep 'DelayMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/delaymean.txt
-                            grep 'JitterMean' $path_traces_round/logMeshSimulation.txt | cut -d: -f2 | awk '{print $1}' >> results/jittermean.txt
-
                             if [ $current_round -eq $nb_sim_rounds ]
                             then
                                 echo "-> Topology $current_topology CONNECTED with all flows initialized"
@@ -496,7 +484,7 @@ do
 
 			echo "--- $nb_flows flows"
 		
-			for packetSize in 32 256 1024 #16 #32 64 128  256 512 750 1024 # "packetSize = 8" doesn't work
+			for packetSize in 32 256 1024 ###16 32 64 128  256 512 750 1024 # "packetSize = 8" doesn't work
 			do	
 			
 					echo "---- $packetSize packet size"
