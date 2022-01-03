@@ -9,7 +9,6 @@ configureNS3(){
     path_traces=$path_NS3/mesh-traces
     path_results=$path_NS3/scriptResults
 
-    rm -rf $path_results
 }
 
 configureScenario(){
@@ -31,9 +30,9 @@ max_nb_interfaces=1
 nb_channels=12 #nb channels 802.11b=3 - 802.11a=12
 
 #####PACKET, FLOWS#####
-packetInterval=1
+packetInterval=0.1
 nb_flows=1
- 
+
 #####SIMULATION ROUNDS#####
 #rounds
 nb_sim_rounds=6 #number of simulation rounds for each topology
@@ -44,13 +43,12 @@ nb_sim_topologies=5
 
 run(){
 
-
-mkdir -p $path_results/plot/packetInterval-$packetInterval-$phy
+path_plot=$path_results/plot/packetInterval-$packetInterval-$phy-$nb_flows-flows
+mkdir -p $path_plot
 mkdir -p $path_results/AggregateThroughput $path_results/DeliveryRate $path_results/DelayMean $path_results/JitterMean
 
 
-rm $path_results/*-temp-*
-rm $path_results/plot/packetInterval-$packetInterval-$phy/*-packetSize-*
+#rm $path_results/*-temp-*
 
 
 for ((  current_interface = $min_nb_interfaces ;  current_interface <= $max_nb_interfaces;  current_interface++  ))
@@ -61,7 +59,6 @@ do
 
         echo "Uniform disk / $nb_nodes nodes / radius $radius / packetSize $packetSize / packetInterval $packetInterval /  $nb_flows  nb_flows / $nb_sim_topologies topologies / $nb_sim_rounds rounds per topology. "
 
-        # cd $path_results
 
         rm $path_results/TxPackets/TxPackets-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         rm $path_results/RxPackets/RxPackets-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
@@ -96,7 +93,7 @@ do
 
 
                 cd $path_results
-
+		#pwd
 
                 # sum_TxPackets=`awk '{ s=s+$1 } END {print s}' result_TxPackets`
                 # sum_RxPackets=`awk '{ s=s+$1 } END {print s}' result_RxPackets`
@@ -128,11 +125,11 @@ do
 
         #  ./confidenceInterval.sh ci=95 nrvar=1 TxPackets/TxPackets-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/TxPackets-packetSize-$packetSize           				
         #  ./confidenceInterval.sh ci=95 nrvar=1 RxPackets/RxPackets-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/RxPackets-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/AggregateThroughput/AggregateThroughput-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_results/plot/packetInterval-$packetInterval-$phy/AggregateThroughput-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/AggregateThroughput/AggregateThroughput-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/AggregateThroughput-packetSize-$packetSize
         #  ./confidenceInterval.sh ci=95 nrvar=1 LostPackets/LostPackets-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/LostPackets-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_results/plot/packetInterval-$packetInterval-$phy/DeliveryRate-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_results/plot/packetInterval-$packetInterval-$phy/DelayMean-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_results/plot/packetInterval-$packetInterval-$phy/JitterMean-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/DeliveryRate-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/DelayMean-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/JitterMean-packetSize-$packetSize
 
         # ./confidenceInterval.sh ci=95 nrvar=1 DroppedTtlL3/DroppedTtlL3-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/DroppedTtlL3-packetSize-$packetSize
         #    ./confidenceInterval.sh ci=95 nrvar=1 QueuedL3/QueuedL3-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/QueuedL3-packetSize-$packetSize
