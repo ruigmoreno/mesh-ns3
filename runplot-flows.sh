@@ -36,9 +36,9 @@ nb_flows=1
  
 #####SIMULATION ROUNDS#####
 #rounds
-nb_sim_rounds=2 #number of simulation rounds for each topology
+nb_sim_rounds=6 #number of simulation rounds for each topology
 #topology
-nb_sim_topologies=3
+nb_sim_topologies=5
 
 }
 
@@ -47,8 +47,8 @@ run(){
 
 mkdir -p $path_results/plot/packetInterval-$packetInterval-$phy
 mkdir -p $path_results/AggregateThroughput $path_results/DeliveryRate $path_results/DelayMean $path_results/JitterMean
-# cd $path_results
-rm -r $path_results/result_*
+
+
 rm $path_results/*-temp-*
 rm $path_results/plot/packetInterval-$packetInterval-$phy/*-packetSize-*
 
@@ -56,7 +56,7 @@ rm $path_results/plot/packetInterval-$packetInterval-$phy/*-packetSize-*
 for ((  current_interface = $min_nb_interfaces ;  current_interface <= $max_nb_interfaces;  current_interface++  ))
 do
 
-    for packetSize in 16 32 #128 512 1024
+    for packetSize in 32 256 1024 # packetSize = 8 doesn't work
     do
 
         echo "Uniform disk / $nb_nodes nodes / radius $radius / packetSize $packetSize / packetInterval $packetInterval /  $nb_flows  nb_flows / $nb_sim_topologies topologies / $nb_sim_rounds rounds per topology. "
