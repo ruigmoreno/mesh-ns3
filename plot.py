@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 os.chdir('./scriptResults/plot')
 phy = '80211a'
-packetInterval = '1'
+packetInterval = '0.1'
 listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean', 'JitterMean']
 
 
@@ -17,9 +17,9 @@ for parameter in listParameter:
     elif (parameter == 'DelayMean'):
         plt.axis([0, 85, 0, 1])
     elif (parameter == 'JitterMean'):
-        plt.axis([0, 85, 0, 0.25])        
+        plt.axis([0, 85, 0, 0.25])
     for nb_flows in ['1']: #['1', '10', '30', '50']:
-        for packetSize in ['16']: #['32', '256', '1024']:
+        for packetSize in ['32']: #['32', '256', '1024']:
             y=np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=1)
             x=np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=0)
             error=np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=2)
