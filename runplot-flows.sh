@@ -87,14 +87,15 @@ do
                 # grep 'RxPackets'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_RxPackets
                 grep 'Throughput'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_AggregateThroughput
                 # grep 'LostPackets'	$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_LostPackets
-                grep 'DeliveyRate' 		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_DeliveryRate
+                grep 'DeliveryRate' 		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_DeliveryRate
                 grep 'DelayMean'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_DelayMean
                 grep 'JitterMean'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_JitterMean
 
 
                 cd $path_results
 		#pwd
-
+		### The NR is only for check if there is any value into result_*.
+		### If there is, NR will be always 1. If there isn't, NR will be 0 and execution will show an error.
                 # sum_TxPackets=`awk '{ s=s+$1 } END {print s}' result_TxPackets`
                 # sum_RxPackets=`awk '{ s=s+$1 } END {print s}' result_RxPackets`
                 sum_AggregateThroughput=`awk '{ s=s+$1 } END {print s}' result_AggregateThroughput`
