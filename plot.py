@@ -10,16 +10,16 @@ listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean', 'JitterMean']
 
 for parameter in listParameter:
     if (parameter == 'AggregateThroughput'):
-        plt.axis([0, 51, 0, 16])
+        plt.axis([0, 71, 0, 16])
         plt.ylabel('Throughput (Mbit/s)')
     elif (parameter == 'DeliveryRate'):
-        plt.axis([0, 51, 0, 100])
+        plt.axis([0, 71, 0, 100])
         plt.ylabel('Delivery Rate (%)')
     elif (parameter == 'DelayMean'):
-        plt.axis([0, 51, 0, 1])
+        plt.axis([0, 71, 0, 1])
         plt.ylabel('Delay Mean (s)')
     elif (parameter == 'JitterMean'):
-        plt.axis([0, 51, 0, 0.25])
+        plt.axis([0, 71, 0, 0.25])
         plt.ylabel('Jitter Mean (s)')
     for packetSize in ['32', '256', '1024']:
         x = np.array([])
