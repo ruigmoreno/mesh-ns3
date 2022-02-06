@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 
 os.chdir('./scriptResults/plot')
 phy = '80211a'
-packetInterval = '1'
+packetInterval = '0.01'
 listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean', 'JitterMean']
 
 for parameter in listParameter:
     if (parameter == 'AggregateThroughput'):
         plt.axis([0, 71, 0, 16])
-        plt.ylabel('Throughput (Mbit/s)')
+        plt.ylabel('Aggregate Throughput (Mbit/s)')
     elif (parameter == 'DeliveryRate'):
         plt.axis([0, 71, 0, 100])
         plt.ylabel('Delivery Rate (%)')

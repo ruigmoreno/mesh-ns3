@@ -119,12 +119,8 @@ def main():
 
 VERSION = '29'
 RADIUS = '300'
-PHY = ''
-TIME_SIMULATION = '60'
-NB_NODES = '81'
 PATH_NS3 = '.'
 PATH_SCENARIO = PATH_NS3+'/mesh-traces/ns-3.'+VERSION+'/uniformDisk-'+RADIUS
-
 
 # walk recursive at each directory
 for filename in glob.iglob(PATH_SCENARIO + '**/**/logMeshSimulationDiscovery.txt', recursive=True):

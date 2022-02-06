@@ -479,12 +479,12 @@ do
 	
 		echo "-- $packetInterval interval"
 
-		for nb_flows in 1 10 30 50
+		for nb_flows in 1 10 30 50 70
 		do
 
 			echo "--- $nb_flows flows"
 		
-			for packetSize in 32 256 1024 ###16 32 64 128  256 512 750 1024 # "packetSize = 8" doesn't work
+			for packetSize in 32 256 1024 ###16 32 64 128 256 512 750 1024 # "packetSize = 8" doesn't work
 			do	
 			
 					echo "---- $packetSize packet size"
