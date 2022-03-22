@@ -133,7 +133,7 @@ private:
 MeshTest::MeshTest () :
   m_xSize (2),
   m_ySize (2),
-  m_standardPhy(1), //1 a / 2 b / 3 g
+  m_standardPhy(0), // 0 a / 1 b / 2 g
   m_numFlows(1),
   m_step (70),  // 70 m of distance
   m_randomStart (0.1),
@@ -191,16 +191,29 @@ enum WifiPhyStandard getEnumFromString(int phy)
 {
     //ps: src/wifi/model/wifi-phy-standard.h
     switch(phy)
-    {   case 1:
-            return WIFI_PHY_STANDARD_80211a; //OFDM PHY 5 GHz
+    {   case 0:
+            return WIFI_PHY_STANDARD_80211a; // OFDM PHY 5 GHz band (Clause 17)
+        case 1:
+            return WIFI_PHY_STANDARD_80211b; // DSSS PHY (Clause 15) and HR/DSSS PHY (Clause 18)
         case 2:
-            return WIFI_PHY_STANDARD_80211b; //2.4 GHz
+            return WIFI_PHY_STANDARD_80211g; // ERP-OFDM PHY (Clause 19, Section 19.5)
         case 3:
-            return WIFI_PHY_STANDARD_80211g; //2.4 GHz
-        //case 4:
-            //return WIFI_PHY_STANDARD_80211n_2_4GHZ; //n funciona
-        //case 5: 
-           // return WIFI_PHY_STANDARD_80211n_5GHZ;//n funciona
+            return WIFI_PHY_STANDARD_80211_10MHZ; // OFDM PHY for the 5 GHz band (Clause 17 with 10 MHz channel bandwidth)
+        case 4:
+           return WIFI_PHY_STANDARD_80211_5MHZ; // OFDM PHY for the 5 GHz band (Clause 17 with 5 MHz channel bandwidth)
+        case 5:
+            return WIFI_PHY_STANDARD_holland; // This is intended to be the configuration used in Gavin Holland's paper
+        case 6:
+            return WIFI_PHY_STANDARD_80211n_2_4GHZ; // HT PHY for the 2.4 GHz band (clause 20) - It doesn't work
+        case 7:
+            return WIFI_PHY_STANDARD_80211n_5GHZ; // HT PHY for the 5 GHz band (clause 20) - It doesn't work
+        case 8: 
+            return WIFI_PHY_STANDARD_80211ac; // VHT PHY (clause 22) - It doesn't work
+        case 9:
+            return WIFI_PHY_STANDARD_80211ax_2_4GHZ; // HE PHY for the 2.4 GHz band (clause 26) - It doesn't work
+        case 10:
+            return WIFI_PHY_STANDARD_80211ax_5GHZ; // HE PHY for the 5 GHz band (clause 26) - It doesn't work
+
         default:
             return WIFI_PHY_STANDARD_80211a;
     }
