@@ -34,7 +34,7 @@ configureScenario(){
     #radius=100
     xSize=1
     ySize=2
-    #root=0
+    root="00:00:00:00:00:01"
     path_scenario=$path_NS3/mesh-grid/ns-3.$version/grid-$xSize\x$ySize
 
 }
@@ -215,7 +215,7 @@ checkTopologyConnected(){
         sum_neighbors_mean=`expr $sum_neighbors_mean \+ $sum_nbNeighbors`
     done
 
-    meanLinks=`echo "scale = 5 ; $sum_neighbors_mean / $xSize\*$ySize" | bc`
+    meanLinks=`echo "scale = 5 ; $sum_neighbors_mean / ($xSize * $ySize)" | bc`
     echo "meanLinks =$meanLinks" >> logMeshSimulationTopology.txt 2>&1
     meanNeighbors=`echo "scale = 5 ; $meanLinks / $current_interface" | bc`
     echo "meanNeighbors=$meanNeighbors" >> logMeshSimulationTopology.txt 2>&1
@@ -306,6 +306,7 @@ run(){
                     --step=$step
                     --x-size=$xSize
                     --y-size=$ySize
+                    --root=$root                    
                     --interfaces=$current_interface
                     --packet-interval=$packetInterval
                     --packet-size=$packetSize
