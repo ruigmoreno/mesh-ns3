@@ -173,7 +173,6 @@ MeshJournal::CreateNodes ()
   // nodes.Create (m_nbNodes);
   nodes.Create (m_ySize*m_xSize);
   // Configure YansWifiChannel
-  // YansWifiPhyHelper wifiPhy;
   YansWifiPhyHelper wifiPhy = YansWifiPhyHelper::Default();
   YansWifiChannelHelper wifiChannel = YansWifiChannelHelper::Default ();
   wifiPhy.SetChannel (wifiChannel.Create ());
@@ -194,9 +193,10 @@ MeshJournal::CreateNodes ()
     //is specified only for 11s
     mesh.SetStackInstaller (m_stack);
   }
-  // There is a channel?
+  
   if (m_chan)
   {
+    // There is a channel and set interface
     mesh.SetSpreadInterfaceChannels (MeshHelper::SPREAD_CHANNELS);
   }
   else

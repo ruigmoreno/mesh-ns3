@@ -3,7 +3,7 @@ bindings/python/**
 build/**
 doc/**
 examples/**
-mesh-traces/**
+mesh-**/**
 waf-tools/**
 script*/**
 .waf*/**
