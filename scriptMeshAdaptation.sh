@@ -33,6 +33,7 @@ configureScenario(){
     #nb_nodes=81
     radius=300
     #root=0
+    root="00:00:00:00:00:1"
     path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
 
 }
@@ -362,6 +363,7 @@ run(){
                         --timeStartFlowSources=$timeStartFlowSources
                         --nbNodes=$nb_nodes
                         --radius=$radius
+                        --root=$root
                         --interfaces=$current_interface
                         --numFlows=$nb_flows
                         --packet-interval=$packetInterval
@@ -474,12 +476,12 @@ do
 
 	echo "$nb_nodes nodes"
 	
-	for packetInterval in 0.1 #1 0.1 0.01
+	for packetInterval in 0.01 #1 0.1 0.01
 	do
 	
 		echo "-- $packetInterval interval"
 
-		for nb_flows in 1 10 30 50 70
+		for nb_flows in 1 10 30 50 70 #1 50 70 #1 10 30 50 70
 		do
 
 			echo "--- $nb_flows flows"
