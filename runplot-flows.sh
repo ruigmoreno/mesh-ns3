@@ -31,7 +31,7 @@ nb_channels=12 #nb channels 802.11b=3 - 802.11a=12
 
 #####PACKET, FLOWS#####
 packetInterval=0.01
-nb_flows=70
+nb_flows=1
 
 #####SIMULATION ROUNDS#####
 #rounds
@@ -155,6 +155,19 @@ do
                 sum_Prep=`awk '{ s=s+$1 } END {print s}' result_Prep`
                 sum_Perr=`awk '{ s=s+$1 } END {print s}' result_Perr`
 
+                if [ "$sum_Preq" == '-nan' ];
+                then
+                    sum_Preq=0
+                fi
+                if [ "$sum_Prep" == '-nan' ];
+                then
+                    sum_Prep=0
+                fi
+                if [ "$sum_Perr" == '-nan' ];
+                then
+                    sum_Perr=0
+                fi
+
                 # per node
                 preq_perNode=`echo "scale=2; $sum_Preq/$nb_nodes" | bc`
                 prep_perNode=`echo "scale=2; $sum_Prep/$nb_nodes" | bc`
@@ -240,122 +253,8 @@ done #interface
 
 }
 
-plot(){
-
-    cd $path_results/plot
-
-ls
-
-    cp  $path_results/plot/packetInterval-$packetInterval-$phy/* $path_results/plot/.
-
-
-ls
-
-    gnuplot TxPackets.plot
-    gnuplot RxPackets.plot
-    gnuplot AggregateThroughput.plot
-    gnuplot LostPackets.plot
-    gnuplot DeliveryRate.plot
-    gnuplot DelayMean.plot
-    gnuplot JitterMean.plot
-    #gnuplot TimesForwarded.pĺot
-    #gnuplot RxBytes.plot
-    #gnuplot DropMacQueue.plot 
-    #gnuplot FramesSentTotal.plot 
-    #gnuplot FramesSentData.plot 
-    #gnuplot FramesSentMng.plot	
-    gnuplot DroppedTtlL3.plot
-    gnuplot QueuedL3.plot
-    gnuplot DroppedL3.plot
-    gnuplot Preq-initiatedPreq.plot
-    #gnuplot Preq-initiatedPreqProactive.plot
-    #gnuplot Preq-retransmittedPreq.plot
-    #gnuplot Preq-total.plot
-    gnuplot Prep-total.plot
-    gnuplot Perr-total.plot
-    gnuplot RoutingControlPackets.plot
-    #gnuplot txMngtxDataHWMP.plot
-    #gnuplot txMngHWMP.plot
-    #gnuplot txOpenPMP.plot
-    #gnuplot txConfirmPMP.plot
-    #gnuplot txClosePMP.plot
-    #gnuplot txMngPMP.plot
-    #gnuplot droppedPMP.plot
-            
-    epstopdf TxPackets.eps
-    epstopdf RxPackets.eps
-    epstopdf AggregateThroughput.eps
-    epstopdf LostPackets.eps
-    epstopdf DeliveryRate.eps
-    epstopdf DelayAverage.eps
-    epstopdf JitterAverage.eps
-    #epstopdf TimesForwarded.eps
-    #epstopdf RxBytes.eps
-    #epstopdf DropMacQueue.eps
-    #epstopdf pps-FramesSentTotal.eps
-    #epstopdf pps-FramesSentData.eps
-    #epstopdf pps-FramesSentMng.eps
-    epstopdf DroppedTtlL3.eps
-    epstopdf QueuedL3.eps
-    epstopdf DroppedL3.eps
-    epstopdf Preq-initiatedPreq.eps
-    #epstopdf Preq-initiatedPreqProactive.eps
-    #epstopdf Preq-retransmittedPreq.eps
-    #epstopdf Preq-total.eps
-    epstopdf Prep-total.eps
-    epstopdf Perr-total.eps
-    epstopdf RoutingControlPackets.eps
-    #epstopdf txMngtxDataHWMP.eps
-    #epstopdf txMngHWMP.eps
-    #epstopdf txOpenPMP.eps
-    #epstopdf txConfirmPMP.eps
-    #epstopdf txClosePMP.eps
-    #epstopdf txMngPMP.eps
-    #epstopdf droppedPMP.eps
-
-
-   mv TxPackets.pdf 		    		TxPackets-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv RxPackets.pdf 		   		RxPackets-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv AggregateThroughput.pdf 	AggregateThroughput-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv LostPackets.pdf 	        	LostPackets-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv DeliveryRate.pdf 		    	DeliveryRate-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv DelayAverage.pdf 		    	DelayAverage-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   mv JitterAverage.pdf 		 	JitterAverage-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   #mv TimesForwarded.pdf 		TimesForwarded-scenario-$scenario-$rootPosition-packetSize-$packetSize-packetInterval-$packetInterval-flows-$nb_flows-$phy.pdf
-    ##mvDropMacQueue.pdf 		DropMacQueue-flows-$nb_flows.pdf 
-    mv DroppedTtlL3.pdf 		DroppedTtlL3-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    mv QueuedL3.pdf 		QueuedL3-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    mv DroppedL3.pdf 		DroppedL3-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    ##mvPreq.pdf Preq-perNode-flows-$nb_flows.pdf 
-    mv Preq-initiatedPreq.pdf          Preq-initiatedPreq-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-   # mv Preq-initiatedPreqProactive.pdf Preq-initiatedPreqProactive-scenario-$scenario-$rootPosition-packetSize-$packetSize-packetInterval-$packetInterval-flows-$nb_flows-$phy.pdf
-   # mv Preq-retransmittedPreq.pdf      Preq-retransmittedPreq-scenario-$scenario-$rootPosition-packetSize-$packetSize-packetInterval-$packetInterval-flows-$nb_flows-$phy.pdf
-   # mv Preq-total.pdf                  Preq-total-scenario-$scenario-$rootPosition-packetSize-$packetSize-packetInterval-$packetInterval-flows-$nb_flows-$phy.pdf
-    mv Prep-total.pdf                  Prep-total-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    mv Perr-total.pdf                  Perr-total-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    mv RoutingControlPackets.pdf 	   RoutingControlPackets-packetInterval-$packetInterval-$phy-nb_nodes-$nb_nodes.pdf
-    #mvtxMngtxDataHWMP.pdf  	    txMngtxDataHWMP-flows-$nb_flows.pdf 
-    #mvtxMngHWMP.pdf  	      	    txMngHWMP-flows-$nb_flows.pdf 
-    #mvtxOpenPMP.pdf 		    txOpenPMP-flows-$nb_flows.pdf 
-    #mvtxConfirmPMP.pdf 		    txConfirmPMP-flows-$nb_flows.pdf 
-    #mvtxClosePMP.pdf 		    txClosePMP-flows-$nb_flows.pdf 
-    #mvtxMngPMP.pdf 		    txMngPMP-flows-$nb_flows.pdf 
-    #mvdroppedPMP.pdf 		    droppedPMP-flows-$nb_flows.pdf 
-
-
-    mkdir -p $path_results/Results-PDF/nodes-$nb_nodes-packetInterval-$packetInterval-$phy
-    mv *.pdf $path_results/Results-PDF/nodes-$nb_nodes-packetInterval-$packetInterval-$phy/.
-
-    rm -rf *.eps
-    rm $path_results/plot/*-packetSize-*
-
-}
-
 
 configureNS3
 configureScenario
 configureSimulationParameters
 run
-#plot
-
-
