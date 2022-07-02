@@ -6,8 +6,8 @@ configureNS3(){
     path_project=~/workspace
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
 
-    path_traces=$path_NS3/mesh-traces-rp-0.01
-    path_results=$path_NS3/scriptResults
+    path_traces=$path_NS3/mesh-traces
+    path_results=$path_NS3/scriptResults-rp-001
 
 }
 

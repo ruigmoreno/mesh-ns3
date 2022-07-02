@@ -5,7 +5,7 @@ doc/**
 examples/**
 mesh-**/**
 waf-tools/**
-script*/**
+scriptResults/**
 .waf*/**
 __pycache__
 
