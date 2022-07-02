@@ -339,6 +339,12 @@ run(){
                     #     mv checked*.dot 	      	    $path_traces/
                     # fi
                     ##############################
+                    if [ $current_round -eq $nb_sim_rounds ]
+                    then
+                        echo "-> Topology $current_topology CONNECTED with all flows initialized"
+                        echo "Topology $current_topology CONNECTED -> Topology $nb_sim_topologies_connected" >> logMeshTopologyConnectivity.txt 2>&1
+                        nb_sim_topologies_connected=`expr $nb_sim_topologies_connected + 1`
+                    fi                    
 
                 done # for [current_round]
             fi # if [ connected ]
@@ -359,7 +365,7 @@ configureScenario
 
 
 
-for standardPhy in 0 1 2
+for standardPhy in 0 #1 2
 do
 
     getStringPhyLayer $standardPhy
@@ -370,7 +376,7 @@ do
 
 		echo "-- $packetInterval interval"
 
-		for step in 70 80 90 100 110 120 #160 200 #10 30 50 70
+		for step in 96.5 97.5 99.5 100 100.5 #98.6 98.7 98.8 98.9 100.1 100.2  #96.5 102.5 #60 70 80 90 100 110 120 160 200
 		do
 
 			echo "--- $step step"
