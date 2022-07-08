@@ -154,6 +154,9 @@ do
                 sum_Preq=`awk '{ s=s+$1 } END {print s}' result_Preq`
                 sum_Prep=`awk '{ s=s+$1 } END {print s}' result_Prep`
                 sum_Perr=`awk '{ s=s+$1 } END {print s}' result_Perr`
+                # echo $sum_Preq
+                # echo $sum_Prep
+                # echo $sum_Perr
 
                 if [ "$sum_Preq" == '-nan' ];
                 then
@@ -192,12 +195,28 @@ do
                 echo $nb_flows $prep_total		  >> $path_results/PrepTotal/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
                 echo $nb_flows $perr_total		  >> $path_results/PerrTotal/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
 
-
                 rm -r $path_results/result*
 
             done #round
 
         done #topology
+        # sum_Preq=''
+        # sum_Prep=''
+        # sum_Perr=''
+        # total_msgs=`expr $nb_sim_rounds \* $nb_sim_topologies`
+        # sum_Preq=`awk '{ s=s+$2 } END {print s}' $path_results/PreqTotal/Preq-interface-$min_nb_interfaces-nbFlows-$nb_flows-packetSize-$packetSize-original80211s`
+        # echo $sum_Preq
+        
+
+        # Preq-interface-1-nbFlows-1-packetSize-32-original80211s
+        # sum_Prep=`awk '{ s=s+$1 } END {print s}' result_Prep`
+        # sum_Perr=`awk '{ s=s+$1 } END {print s}' result_Perr`
+        
+        # per node
+        # preq_perNode=`echo "scale=2; $sum_Preq/$nb_nodes" | bc`
+        # prep_perNode=`echo "scale=2; $sum_Prep/$nb_nodes" | bc`
+        # perr_perNode=`echo "scale=2; $sum_Perr/$nb_nodes" | bc`
+
 
         chmod -R 755 $path_results/AggregateThroughput/.
         chmod -R 755 $path_results/DeliveryRate/.
@@ -226,6 +245,10 @@ do
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PreqPerNode/Preq-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Preq-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PrepPerNode/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Prep-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PerrPerNode/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Perr-packetSize-$packetSize
+
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PreqTotal/Preq-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/PreqTotal-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PrepTotal/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/PrepTotal-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PerrTotal/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s >> $path_plot/PerrTotal-packetSize-$packetSize
 
         # ./confidenceInterval.sh ci=95 nrvar=1 DroppedTtlL3/DroppedTtlL3-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/DroppedTtlL3-packetSize-$packetSize
         #    ./confidenceInterval.sh ci=95 nrvar=1 QueuedL3/QueuedL3-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> plot/packetInterval-$packetInterval-$phy/QueuedL3-packetSize-$packetSize
