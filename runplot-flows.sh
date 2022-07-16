@@ -119,7 +119,7 @@ do
                 fi
 
                 sum_AggregateThroughput=`awk '{ s=s+$1 } END {print s}' result_AggregateThroughput`
-                if [ "$sum_AggregateThroughput" == '-nan'];
+                if [ "$sum_AggregateThroughput" == '-nan' ];
                 then
                     echo "Error: Invalid value in Aggregate Throughput."
                     continue
