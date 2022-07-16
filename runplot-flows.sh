@@ -7,14 +7,13 @@ configureNS3(){
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
 
     path_traces=$path_NS3/mesh-traces
-    path_results=$path_NS3/scriptResults-rp-001
+    path_results=$path_NS3/scriptResults
 
 }
 
 configureScenario(){
     nb_nodes=81
     radius=300
-    path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
 }
 
 configureSimulationParameters(){
@@ -68,7 +67,7 @@ do
         rm $path_results/AggregateThroughput/AggregateThroughput-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         rm $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         rm $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
-        rm $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
+        # rm $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         rm $path_results/PreqPerNode/Preq-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
         rm $path_results/PrepPerNode/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
         rm $path_results/PerrPerNode/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
@@ -95,13 +94,16 @@ do
                 grep 'Throughput'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_AggregateThroughput
                 grep 'DeliveryRate' 		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_DeliveryRate
                 grep 'DelayMean'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_DelayMean
-                grep 'JitterMean'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_JitterMean
+                # grep 'JitterMean'		$path_logmesh/logMeshSimulation.txt | cut -d: -f2 | cut -d'%' -f1        > $path_results/result_JitterMean
 
 	  			for ((  x = 0 ;  x < $nb_nodes;  x++  ))
 				do
 				  grep 'initiatedPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_Preq
 				  grep 'initiatedPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f9 | cut -d'"' -f2 >> $path_results/result_Prep
 				  grep 'initiatedPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f10 | cut -d'"' -f2 >> $path_results/result_Perr
+				#   grep 'txPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPreq
+				#   grep 'txPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPrep
+				#   grep 'txPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPerr
 				done #x
 
                 cd $path_results
@@ -109,14 +111,15 @@ do
                 ### The NR is only for check if there is any value into result_*.
                 ### If there is, NR will be always 1. If there isn't, NR will be 0 and execution will show an error.
 
-                if ! [[ -s result_DelayMean || -s result_DeliveryRate || -s  result_JitterMean ]];
+                # if ! [[ -s result_DelayMean || -s result_DeliveryRate || -s  result_JitterMean ]];
+                if ! [[ -s result_DelayMean || -s result_DeliveryRate ]];
                 then
                     echo "One of three result (DelayMean, DeliveryRate or JitterMean) is empty."
                     continue
                 fi
 
                 sum_AggregateThroughput=`awk '{ s=s+$1 } END {print s}' result_AggregateThroughput`
-                if [[ $sum_AggregateThroughput == '-nan' || $sum_AggregateThroughput == [[:space:]]* ]];
+                if [ "$sum_AggregateThroughput" == '-nan'];
                 then
                     echo "Error: Invalid value in Aggregate Throughput."
                     continue
@@ -137,15 +140,15 @@ do
                     continue
                 fi
                 # echo $average_DelayMean
-                average_JitterMean=`awk '{ s += $1 } END {print s/NR}' result_JitterMean`
+                # average_JitterMean=`awk '{ s += $1 } END {print s/NR}' result_JitterMean`
                 # pwd
                 # len=`expr length "$average_JitterMean"`
                 # echo "JitterMean: $average_JitterMean // JitterMean.length: $len"
-                if [ "$average_JitterMean" == '-nan' ];
-                then
-                    echo "Error: Invalid value in JitterMean."
-                    continue
-                fi
+                # if [ "$average_JitterMean" == '-nan' ];
+                # then
+                #     echo "Error: Invalid value in JitterMean."
+                #     continue
+                # fi
                 # exit
 
                 # PROTOCOL HWMP
@@ -186,7 +189,7 @@ do
                 echo $nb_flows $sum_AggregateThroughput >> $path_results/AggregateThroughput/AggregateThroughput-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
                 echo $nb_flows $average_DeliveryRate     	>> $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
                 echo $nb_flows $average_DelayMean        	>> $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
-                echo $nb_flows $average_JitterMean       	>> $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
+                # echo $nb_flows $average_JitterMean       	>> $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
 
                 echo $nb_flows $preq_perNode			>> $path_results/PreqPerNode/Preq-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
                 echo $nb_flows $prep_perNode			>> $path_results/PrepPerNode/Prep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
@@ -235,7 +238,7 @@ do
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/AggregateThroughput/AggregateThroughput-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/AggregateThroughput-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/DeliveryRate-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/DelayMean-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/JitterMean-packetSize-$packetSize
+        # ./confidenceInterval.sh ci=95 nrvar=1 $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/JitterMean-packetSize-$packetSize
 
 
 

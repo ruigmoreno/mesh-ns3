@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################
 #
-# 
+#
 ################################
 clear
 
@@ -13,17 +13,18 @@ configureNS3(){
 
     if [ $local -eq 0 ]
     then
-        path_project=~/workspace 
+        path_project=~/workspace
     else
         particaoCluster=gpu
         comandoWaf="srun -p $particaoCluster $comandoWaf"
-        path_project=~/carinaoliveira/2016
+        path_project=~/path_project/
     fi
 
     #echo "Configure NS3"
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
     #clear old traces
-    rm -rf $path_NS3/mesh-*.* $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
+    # rm -rf $path_NS3/mesh-*.* $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
+    rm -rf $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
     #$path_NS3/checked*.dot
 }
 ################################################################
@@ -32,7 +33,7 @@ configureScenario(){
     #UNIFORM DISK
     #nb_nodes=81
     radius=300
-    #root=0
+    setRoot=0 # 0 - false; 1 - true;
     root="00:00:00:00:00:1"
     path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
 
@@ -194,14 +195,25 @@ checkTopologyConnected(){
 #       --standardPhy=$standardPhy"
 
         ### UNIFORM DISK ###
-        $comandoWaf "scratch/mesh-journal
-        --discovery=$discovery
-        --nbNodes=$nb_nodes
-        --radius=$radius
-        --time=$timeSimulationDiscovery
-        --seed=$current_topology
-        --report=$report" > logMeshSimulationDiscovery.txt 2>&1
-
+        if [ $setRoot -eq 1 ];
+        then
+            $comandoWaf "scratch/mesh-journal
+            --discovery=$discovery
+            --nbNodes=$nb_nodes
+            --radius=$radius
+            --root=$root
+            --time=$timeSimulationDiscovery
+            --seed=$current_topology
+            --report=$report" > logMeshSimulationDiscovery.txt 2>&1
+        else
+            $comandoWaf "scratch/mesh-journal
+            --discovery=$discovery
+            --nbNodes=$nb_nodes
+            --radius=$radius
+            --time=$timeSimulationDiscovery
+            --seed=$current_topology
+            --report=$report" > logMeshSimulationDiscovery.txt 2>&1
+        fi
     #--------------------------------------#
     # Register number of neighbors per node
     #--------------------------------------#
@@ -288,7 +300,7 @@ run(){
                 if [ -f checked*.dot ]
                 then
                     mv checked*.dot 	      	    $path_traces_topology/discovery
-                fi                
+                fi
                 #//////////////////////////////
 
                 echo "Topology $current_topology is NOT connected. $nb_topologies_failed_attempts/$max_topologies_attempts failed topologies attempts / nb_sim_topologies_experiments=$nb_sim_topologies_experiments "
@@ -357,20 +369,39 @@ run(){
 
 
                         ### UNIFORM DISK ###
-                        $comandoWaf "scratch/mesh-journal
-                        --discovery=$discovery
-                        --time=$timeSimulation
-                        --timeStartFlowSources=$timeStartFlowSources
-                        --nbNodes=$nb_nodes
-                        --radius=$radius
-                        --root=$root
-                        --interfaces=$current_interface
-                        --numFlows=$nb_flows
-                        --packet-interval=$packetInterval
-                        --packet-size=$packetSize
-                        --report=$report
-                        --seed=$current_topology
-                        --pcap=$pcap" > logMeshSimulation.txt 2>&1
+                        if [ $setRoot -eq 1 ];
+                        then
+                            # With root
+                            $comandoWaf "scratch/mesh-journal
+                            --discovery=$discovery
+                            --time=$timeSimulation
+                            --timeStartFlowSources=$timeStartFlowSources
+                            --nbNodes=$nb_nodes
+                            --radius=$radius
+                            --root=$root
+                            --interfaces=$current_interface
+                            --numFlows=$nb_flows
+                            --packet-interval=$packetInterval
+                            --packet-size=$packetSize
+                            --report=$report
+                            --seed=$current_topology
+                            --pcap=$pcap" > logMeshSimulation.txt 2>&1
+                        else
+                            $comandoWaf "scratch/mesh-journal
+                            --discovery=$discovery
+                            --time=$timeSimulation
+                            --timeStartFlowSources=$timeStartFlowSources
+                            --nbNodes=$nb_nodes
+                            --radius=$radius
+                            --interfaces=$current_interface
+                            --numFlows=$nb_flows
+                            --packet-interval=$packetInterval
+                            --packet-size=$packetSize
+                            --report=$report
+                            --seed=$current_topology
+                            --pcap=$pcap" > logMeshSimulation.txt 2>&1
+                        fi
+
 
                         
                         #check flows have started
@@ -475,22 +506,22 @@ for nb_nodes in 81 #121 101 61 141
 do
 
 	echo "$nb_nodes nodes"
-	
+
 	for packetInterval in 0.01 #1 0.1 0.01
 	do
-	
+
 		echo "-- $packetInterval interval"
 
 		for nb_flows in 1 10 30 50 70 #1 50 70 #1 10 30 50 70
 		do
 
 			echo "--- $nb_flows flows"
-		
+
 			for packetSize in 32 256 1024 ###16 32 64 128 256 512 750 1024 # "packetSize = 8" doesn't work
-			do	
-			
+			do
+
 					echo "---- $packetSize packet size"
-			
+
 					configureSimulationParameters
 					run
 
@@ -499,5 +530,5 @@ do
 		done # nb_flows
 
 	done #packetInterval
-	
+
 done #nb_nodes

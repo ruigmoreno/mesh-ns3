@@ -2,57 +2,60 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-os.chdir('./scriptResults-all-001/plot')
+os.chdir('./scriptResults-all-0001/plot')
 cwd = os.getcwd()
 phy = '80211a'
-packetInterval = '0.01'
-listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean', 'JitterMean']
+nb_nodes='81'
+packetInterval = '0.001'
+# listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean', 'JitterMean']
+listParameter=['AggregateThroughput', 'DeliveryRate', 'DelayMean']
 listPacketSize=['32', '256', '1024']
+# listPacketSize=['32', '1024']
 listFlows=['1', '10', '30', '50', '70']
+# listFlows=['10']
+listModes=['R','RP']
 markerStyle=''
 
 for parameter in listParameter:
     if (parameter == 'AggregateThroughput'):
-        plt.axis([0, 71, 0, 16])
-        plt.ylabel('Aggregate Throughput (Mbit/s)')
+        plt.axis([0, 71, 0, 8])
+        # plt.ylabel('Aggregate Throughput (Mbit/s)')
+        plt.ylabel('Somatório Throughput (Mbit/s)')
     elif (parameter == 'DeliveryRate'):
         plt.axis([0, 71, 0, 100])
-        plt.ylabel('Delivery Rate (%)')
+        # plt.ylabel('Delivery Rate (%)')
+        plt.ylabel('Taxa de Entrega (%)')
     elif (parameter == 'DelayMean'):
         plt.axis([0, 71, 0, 1])
-        plt.ylabel('Delay Mean (s)')
+        # plt.ylabel('Delay Mean (s)')
+        plt.ylabel('Média de Atraso (s)')
     elif (parameter == 'JitterMean'):
         plt.axis([0, 71, 0, 0.25])
-        plt.ylabel('Jitter Mean (s)')
+        # plt.ylabel('Jitter Mean (s)')
+        plt.ylabel('Média Jitter (s)')
 
-    for i in range(3):
-        if i == 0:
-            legend = 'R'
-            color = 'blue'
-            os.chdir(cwd+'/reactiveWithoutRoot')
-        elif i == 1:
-            legend = 'RR'
+    for mode in listModes:
+        if mode == 'R':
             color = 'orange'
-            os.chdir(cwd+'/reactiveWithRoot')
-        elif i == 2:
-            legend = 'RP'
+        elif mode == 'RR':
+            color = 'blue'
+        elif mode == 'RP':
             color = 'green'
-            os.chdir(cwd+'/reactiveProactive')
         for packetSize in listPacketSize:
             x = np.array([])
             y = np.array([])
             error = np.array([])
             for nb_flows in listFlows:
-                load_y = np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=1)
+                load_y = np.loadtxt('./'+mode+'/nb_nodes-'+nb_nodes+'-packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=1)
                 y = np.append(y, load_y)
 
-                load_x = np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=0)
+                load_x = np.loadtxt('./'+mode+'/nb_nodes-'+nb_nodes+'-packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=0)
                 x = np.append(x, load_x)
 
-                load_error=np.loadtxt('./packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=2)
+                load_error=np.loadtxt('./'+mode+'/nb_nodes-'+nb_nodes+'-packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=2)
                 error = np.append(error, load_error)
             if packetSize == '32':
-                markerStyle='<'
+                markerStyle='>'
                 # if i == 0:
                 #     markerStyle='<'
                 # elif i == 1:
@@ -62,13 +65,14 @@ for parameter in listParameter:
             elif packetSize == '256':
                 markerStyle='*'
             elif packetSize == '1024':
-                markerStyle='d'                
-            plt.xlabel('flows number')
-            plt.errorbar(x, y, yerr=error, marker=markerStyle, color=color, label=legend+' '+packetSize+' bytes', capsize=6)
+                markerStyle='d'
+            # plt.xlabel('flows number')
+            plt.xlabel('Número de fluxos')
+            plt.errorbar(x, y, yerr=error, marker=markerStyle, color=color, label=mode+' '+packetSize+' bytes', capsize=6)
             # plt.errorbar(x, y, marker=markerStyle, color=color, label=legend+' '+packetSize+' bytes', capsize=6)
-            plt.legend(bbox_to_anchor=(0., -.31, 1., .102), loc='lower left', ncol=3, mode="expand", borderaxespad=0)
+            plt.legend(bbox_to_anchor=(0.2, -.3, .6, .102), loc='lower left', ncol=2, mode="expand", borderaxespad=0)
             plt.grid(True)
 
-    plt.savefig('../plot-'+parameter+'-packetInterval-'+packetInterval+'-Comparative.pdf', bbox_inches="tight")
+    plt.savefig('./plot-'+parameter+'-packetInterval-'+packetInterval+'-Comparative-PT.pdf', bbox_inches="tight")
     plt.clf() # clear the entire current figure with all its axes
 
