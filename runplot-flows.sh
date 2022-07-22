@@ -45,8 +45,14 @@ run(){
 path_plot=$path_results/plot/nb_nodes-$nb_nodes-packetInterval-$packetInterval-$phy-$nb_flows-flows
 mkdir -p $path_plot
 mkdir -p $path_results/AggregateThroughput $path_results/DeliveryRate $path_results/DelayMean $path_results/JitterMean
+
 mkdir -p $path_results/PreqPerNode $path_results/PrepPerNode $path_results/PerrPerNode
+mkdir -p $path_results/TxPreqPerNode $path_results/TxPrepPerNode $path_results/TxPerrPerNode
+mkdir -p $path_results/DroppedTtlPerNode $path_results/TotalQueuedPerNode
+mkdir -p $path_results/TotalDroppedPerNode
+
 mkdir -p $path_results/PreqTotal $path_results/PrepTotal $path_results/PerrTotal
+mkdir -p $path_results/TxPreqTotal $path_results/TxPrepTotal $path_results/TxPerrTotal
 
 
 #rm $path_results/*-temp-*
@@ -68,12 +74,12 @@ do
         rm $path_results/DeliveryRate/DeliveryRate-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         rm $path_results/DelayMean/DelayMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
         # rm $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize
-        rm $path_results/PreqPerNode/Preq-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
-        rm $path_results/PrepPerNode/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
-        rm $path_results/PerrPerNode/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
-        rm $path_results/PreqTotal/Preq-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
-        rm $path_results/PrepTotal/Prep-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
-        rm $path_results/PerrTotal/Perr-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PreqPerNode/Preq-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PrepPerNode/Prep-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PerrPerNode/Perr-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PreqTotal/Preq-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PrepTotal/Prep-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
+        rm $path_results/PerrTotal/Perr-nb_nodes-$nb_nodes-interface-$current_interface-nbFlows-$nb_flows-packetSize-$packetSize-original80211s
         
 
         for ((  current_topology = 1 ;  current_topology <= $nb_sim_topologies;  current_topology++  ))
@@ -98,12 +104,15 @@ do
 
 	  			for ((  x = 0 ;  x < $nb_nodes;  x++  ))
 				do
-				  grep 'initiatedPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_Preq
-				  grep 'initiatedPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f9 | cut -d'"' -f2 >> $path_results/result_Prep
-				  grep 'initiatedPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f10 | cut -d'"' -f2 >> $path_results/result_Perr
-				#   grep 'txPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPreq
-				#   grep 'txPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPrep
-				#   grep 'txPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_txPerr
+				    grep 'droppedTtl=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f5 | cut -d'"' -f2 >> $path_results/result_droppedTtl
+				    grep 'totalQueued=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f6 | cut -d'"' -f2 >> $path_results/result_totalQueued
+				    grep 'totalDropped=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f7 | cut -d'"' -f2 >> $path_results/result_totalDropped                
+				    grep 'initiatedPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f8 | cut -d'"' -f2 >> $path_results/result_Preq
+				    grep 'initiatedPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f9 | cut -d'"' -f2 >> $path_results/result_Prep
+				    grep 'initiatedPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f10 | cut -d'"' -f2 >> $path_results/result_Perr
+				    grep 'txPreq=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f2 | cut -d'"' -f2 >> $path_results/result_txPreq
+				    grep 'txPrep=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f2 | cut -d'"' -f2 >> $path_results/result_txPrep
+				    grep 'txPerr=' $path_logmesh/report/mesh-report-$x.xml | cut -d= -f2 | cut -d'"' -f2 >> $path_results/result_txPerr
 				done #x
 
                 cd $path_results
@@ -155,9 +164,15 @@ do
                 sum_Preq=`awk '{ s=s+$1 } END {print s}' result_Preq`
                 sum_Prep=`awk '{ s=s+$1 } END {print s}' result_Prep`
                 sum_Perr=`awk '{ s=s+$1 } END {print s}' result_Perr`
-                # echo "sum_Preq: $sum_Preq"
-                # echo "sum_Prep: $sum_Prep"
-                # echo "sum_Perr: $sum_Perr"
+                
+                sum_txPreq=`awk '{ s=s+$1 } END {print s}' result_txPreq`
+                sum_txPrep=`awk '{ s=s+$1 } END {print s}' result_txPrep`
+                sum_txPerr=`awk '{ s=s+$1 } END {print s}' result_txPerr`
+                sum_droppedTtl=`awk '{ s=s+$1 } END {print s}' result_droppedTtl`
+                
+                sum_totalDropped=`awk '{ s=s+$1 } END {print s}' result_totalDropped`
+                sum_totalQueued=`awk '{ s=s+$1 } END {print s}' result_totalQueued`
+                
 
                 if [[ $sum_Preq == '-nan' || $sum_Preq == [[:space:]]* ]];
                 then
@@ -175,14 +190,56 @@ do
                     continue
                 fi
 
+                if [[ $sum_txPrep == '-nan' || $sum_txPreq == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+                if [[ $sum_txPrep == '-nan' || $sum_txPrep == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+                if [[ $sum_txPerr == '-nan' || $sum_txPerr == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+                if [[ $sum_droppedTtl == '-nan' || $sum_droppedTtl == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+                if [[ $sum_totalDropped == '-nan' || $sum_totalDropped == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+                if [[ $sum_totalQueued == '-nan' || $sum_totalQueued == [[:space:]]* ]];
+                then
+                    echo "Error: Invalid value in sum_Perr."
+                    continue
+                fi
+
                 # per node
                 preq_perNode=`echo "scale=2; $sum_Preq/$nb_nodes" | bc`
                 prep_perNode=`echo "scale=2; $sum_Prep/$nb_nodes" | bc`
                 perr_perNode=`echo "scale=2; $sum_Perr/$nb_nodes" | bc`
 
+                txpreq_perNode=`echo "scale=2; $sum_txPreq/$nb_nodes" | bc`
+                txprep_perNode=`echo "scale=2; $sum_txPrep/$nb_nodes" | bc`
+                txperr_perNode=`echo "scale=2; $sum_txPerr/$nb_nodes" | bc`
+                droppedttl_perNode=`echo "scale=2; $sum_droppedTtl/$nb_nodes" | bc`
+                totaldropped_perNode=`echo "scale=2; $sum_totalDropped/$nb_nodes" | bc`
+                totalqueued_perNode=`echo "scale=2; $sum_totalQueued/$nb_nodes" | bc`
+
                 preq_total=`echo "scale=2; $sum_Preq/1" | bc`
                 prep_total=`echo "scale=2; $sum_Prep/1" | bc`
                 perr_total=`echo "scale=2; $sum_Perr/1" | bc`
+
+                txpreq_total=`echo "scale=2; $sum_txPreq/1" | bc`
+                txprep_total=`echo "scale=2; $sum_txPrep/1" | bc`
+                txperr_total=`echo "scale=2; $sum_txPerr/1" | bc`
 
                 cd $path_NS3
                 # #pwd
@@ -195,9 +252,21 @@ do
                 echo $nb_flows $prep_perNode			>> $path_results/PrepPerNode/Prep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
                 echo $nb_flows $perr_perNode			>> $path_results/PerrPerNode/Perr-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
 
+                echo $nb_flows $txpreq_perNode			>> $path_results/TxPreqPerNode/txPreq-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $txprep_perNode			>> $path_results/TxPrepPerNode/txPrep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $txperr_perNode			>> $path_results/TxPerrPerNode/txPerr-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $droppedttl_perNode			>> $path_results/DroppedTtlPerNode/droppedTtl-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $totaldropped_perNode		>> $path_results/TotalDroppedPerNode/totalDropped-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $totalqueued_perNode			>> $path_results/TotalQueuedPerNode/totalQueued-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+
                 echo $nb_flows $preq_total		  >> $path_results/PreqTotal/PreqTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
                 echo $nb_flows $prep_total		  >> $path_results/PrepTotal/PrepTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
                 echo $nb_flows $perr_total		  >> $path_results/PerrTotal/PerrTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+
+                echo $nb_flows $txpreq_total		  >> $path_results/TxPreqTotal/TxPreqTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $txprep_total		  >> $path_results/TxPrepTotal/TxPrepTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+                echo $nb_flows $txperr_total		  >> $path_results/TxPerrTotal/TxPerrTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s
+
 
                 rm -r $path_results/result*
 
@@ -226,12 +295,21 @@ do
         chmod -R 755 $path_results/DeliveryRate/.
         chmod -R 755 $path_results/DelayMean/.
         chmod -R 755 $path_results/JitterMean/.
+        
         chmod -R 755 $path_results/PreqPerNode/.
         chmod -R 755 $path_results/PrepPerNode/.
         chmod -R 755 $path_results/PerrPerNode/.
-        chmod -R 755 $path_results/PreqTotal/.
-        chmod -R 755 $path_results/PrepTotal/.
-        chmod -R 755 $path_results/PerrTotal/.
+        
+        chmod -R 755 $path_results/TxPreqPerNode/.
+        chmod -R 755 $path_results/TxPrepPerNode/.
+        chmod -R 755 $path_results/TxPerrPerNode/.
+        chmod -R 755 $path_results/DroppedTtlPerNode/.
+        chmod -R 755 $path_results/TotalDroppedPerNode/.
+        chmod -R 755 $path_results/TotalQueuedPerNode/.
+        
+        chmod -R 755 $path_results/TxPreqTotal/.
+        chmod -R 755 $path_results/TxPrepTotal/.
+        chmod -R 755 $path_results/TxPerrTotal/.
 
 
         
@@ -241,14 +319,28 @@ do
         # ./confidenceInterval.sh ci=95 nrvar=1 $path_results/JitterMean/JitterMean-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize >> $path_plot/JitterMean-packetSize-$packetSize
 
 
+        # Per node
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PreqPerNode/Preq-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/Preq-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PrepPerNode/Prep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/Prep-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PerrPerNode/Perr-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/Perr-packetSize-$packetSize
+        
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPreqPerNode/txPreq-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPreq-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPrepPerNode/txPrep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPrep-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPerrPerNode/txPerr-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPerr-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/DroppedTtlPerNode/droppedTtl-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/droppedTtl-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TotalDroppedPerNode/totalDropped-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/totalDropped-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TotalQueuedPerNode/totalQueued-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/totalQueued-packetSize-$packetSize
 
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PreqPerNode/Preq-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Preq-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PrepPerNode/Prep-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Prep-packetSize-$packetSize
-        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PerrPerNode/Perr-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/interfaces-temp-Perr-packetSize-$packetSize
-
+        # Total
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PreqTotal/PreqTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/PreqTotal-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PrepTotal/PrepTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/PrepTotal-packetSize-$packetSize
         ./confidenceInterval.sh ci=95 nrvar=1 $path_results/PerrTotal/PerrTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/PerrTotal-packetSize-$packetSize
+
+
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPreqTotal/TxPreqTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPreqTotal-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPrepTotal/TxPrepTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPrepTotal-packetSize-$packetSize
+        ./confidenceInterval.sh ci=95 nrvar=1 $path_results/TxPerrTotal/TxPerrTotal-nb_nodes-$nb_nodes-interface-$current_interface-flows-$nb_flows-packetInterval-$packetInterval-packetSize-$packetSize-original80211s >> $path_plot/txPerrTotal-packetSize-$packetSize
+        
 
     done #packetSize
 
