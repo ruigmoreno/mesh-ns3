@@ -2,30 +2,30 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-os.chdir('./scriptResults-all-001-2/plot')
+os.chdir('./scriptResults-all-001/')
 cwd = os.getcwd()
 phy = '80211a'
 nb_nodes='81' #'90'
 packetInterval = '0.01'
-parameter='PerrTotal' # 'PreqTotal', 'PrepTotal', 'PerrTotal'
+parameter='totalQueued' # 'PreqTotal', 'PrepTotal', 'PerrTotal', txPreqTotal, txPrepTotal, txPerrTotal, totalDropped, totalQueued
 listModes=['R','RP']
-listPacketSize=['32','256','1024'] #['32', '1024']
-listFlows=['1','10','30','50','70']
+listPacketSize=['32','256','1024']
+listFlows=['1', '10'] #['1','10','30','50','70']
 # title = 'Modes with packet interval of '+packetInterval+' s'
 title = 'Modos com intervalo de pacote de '+packetInterval+' s'
 # for parameter in listParameter:
 
-plt.axis([0, 71, 0, 4000])
+plt.axis([0, 71, 0, 100])
 # plt.ylabel('Number of '+parameter+' Messages ')
 plt.ylabel('Número de Mensagens '+parameter+' ')
 
 for mode in listModes:
     if mode == 'R':
-        color='orange'
+        color='black'
     elif mode == 'RR':
         color='blue'
     elif mode == 'RP':
-        color='green'
+        color='red'
     for packetSize in listPacketSize:
         x = np.array([])
         y = np.array([])
@@ -40,11 +40,11 @@ for mode in listModes:
             load_error=np.loadtxt('./'+mode+'/nb_nodes-'+nb_nodes+'-packetInterval-'+packetInterval+'-'+phy+'-'+nb_flows+'-flows/'+parameter+'-packetSize-'+packetSize, usecols=2)
             error = np.append(error, load_error)
         if packetSize == '32':
-            markerStyle='>'
+            markerStyle='.'
         elif packetSize == '256':
-            markerStyle='*'
+            markerStyle='s'
         elif packetSize == '1024':
-            markerStyle='d'
+            markerStyle='x'
         # plt.xlabel('flows number')
         plt.xlabel('Número de fluxos')
         plt.errorbar(x, y, yerr=error, marker=markerStyle, color=color, label=mode+' '+packetSize+' bytes', capsize=6)

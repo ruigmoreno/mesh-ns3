@@ -6,8 +6,8 @@ configureNS3(){
     path_project=~/workspace
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
 
-    path_traces=$path_NS3/mesh-traces
-    path_results=$path_NS3/scriptResults
+    path_traces=$path_NS3/mesh-traces-rp
+    path_results=$path_NS3/scriptResults-rp-001
 
 }
 
@@ -34,7 +34,7 @@ nb_flows=1
 
 #####SIMULATION ROUNDS#####
 #rounds
-nb_sim_rounds=6 #number of simulation rounds for each topology
+nb_sim_rounds=16 #number of simulation rounds for each topology
 #topology
 nb_sim_topologies=5
 

@@ -23,8 +23,8 @@ configureNS3(){
     #echo "Configure NS3"
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
     #clear old traces
-    # rm -rf $path_NS3/mesh-*.* $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
-    rm -rf $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
+    rm -r $path_NS3/mesh-traces-r $path_NS3/mesh-*.* $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
+    #rm -r $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
     #$path_NS3/checked*.dot
 }
 ################################################################
@@ -35,7 +35,7 @@ configureScenario(){
     radius=300
     setRoot=0 # 0 - false; 1 - true;
     root="00:00:00:00:00:1"
-    path_scenario=$path_NS3/mesh-traces/ns-3.$version/uniformDisk-$radius
+    path_scenario=$path_NS3/mesh-traces-r/ns-3.$version/uniformDisk-$radius
 
 }
 ################################################################
@@ -92,7 +92,7 @@ configureSimulationParameters(){
 
     #####SIMULATION ROUNDS#####
     #rounds
-    nb_sim_rounds=6 #number of simulation rounds for each topology
+    nb_sim_rounds=16 #number of simulation rounds for each topology
 
     #UNIFORM DISK
     #topology
@@ -512,7 +512,7 @@ do
 
 		echo "-- $packetInterval interval"
 
-		for nb_flows in 1 10 30 50 70 #1 50 70 #1 10 30 50 70
+		for nb_flows in 1 10 30 50 70
 		do
 
 			echo "--- $nb_flows flows"
