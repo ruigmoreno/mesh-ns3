@@ -22,8 +22,8 @@ configureNS3(){
 
     #echo "Configure NS3"
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
-    #clear old traces
-    rm -r $path_NS3/mesh-traces-r $path_NS3/mesh-*.* $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
+    #clear cache traces
+    rm -r $path_NS3/mesh-*.xml $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
     #rm -r $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
     #$path_NS3/checked*.dot
 }
@@ -507,7 +507,7 @@ do
 
 	echo "$nb_nodes nodes"
 
-	for packetInterval in 0.01 #1 0.1 0.01
+	for packetInterval in 0.1 #1 0.1 0.01 0.001
 	do
 
 		echo "-- $packetInterval interval"

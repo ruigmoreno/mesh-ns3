@@ -290,6 +290,7 @@ do
         # prep_perNode=`echo "scale=2; $sum_Prep/$nb_nodes" | bc`
         # perr_perNode=`echo "scale=2; $sum_Perr/$nb_nodes" | bc`
 
+	    chmod -R 755 ./confidenceInterval.sh
 
         chmod -R 755 $path_results/AggregateThroughput/.
         chmod -R 755 $path_results/DeliveryRate/.

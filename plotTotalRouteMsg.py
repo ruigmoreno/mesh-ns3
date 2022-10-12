@@ -2,22 +2,29 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-os.chdir('./scriptResults-all-001/')
+os.chdir('./scriptResults-all-01/')
 cwd = os.getcwd()
 phy = '80211a'
 nb_nodes='81' #'90'
-packetInterval = '0.01'
-parameter='totalQueued' # 'PreqTotal', 'PrepTotal', 'PerrTotal', txPreqTotal, txPrepTotal, txPerrTotal, totalDropped, totalQueued
+packetInterval = '0.1'
+parameter='txPerrTotal' # 'PreqTotal', 'PrepTotal', 'PerrTotal', txPreqTotal, txPrepTotal, txPerrTotal, totalDropped, totalQueued
 listModes=['R','RP']
 listPacketSize=['32','256','1024']
-listFlows=['1', '10'] #['1','10','30','50','70']
+listFlows=['1','10','30','50','70']
 # title = 'Modes with packet interval of '+packetInterval+' s'
-title = 'Modos com intervalo de pacote de '+packetInterval+' s'
+#title = 'Modos com intervalo de pacote de '+packetInterval+' s'
 # for parameter in listParameter:
 
-plt.axis([0, 71, 0, 100])
+plt.axis([0, 71, 0, 10000])
 # plt.ylabel('Number of '+parameter+' Messages ')
-plt.ylabel('Número de Mensagens '+parameter+' ')
+# plt.ylabel('Número de mensagens '+parameter+' ')
+
+#plt.ylabel('Total de mensagens PREQ Iniciadas')
+#plt.ylabel('Total de mensagens PREP Iniciadas')
+#plt.ylabel('Total de mensagens PERR Iniciadas')
+#plt.ylabel('Total de mensagens PREQ na rede')
+#plt.ylabel('Total de mensagens PREP na rede')
+plt.ylabel('Total de mensagens PERR na rede')
 
 for mode in listModes:
     if mode == 'R':
@@ -50,7 +57,7 @@ for mode in listModes:
         plt.errorbar(x, y, yerr=error, marker=markerStyle, color=color, label=mode+' '+packetSize+' bytes', capsize=6)
         plt.legend(bbox_to_anchor=(0.2, -.3, .6, .102), loc='lower left', ncol=2, mode="expand", borderaxespad=0)
         plt.grid(True)
-plt.suptitle(title, y=0.925)
+#plt.suptitle(title, y=0.925)
 # plt.savefig('./plot-'+parameter+'-route-msgs-per-node.pdf', bbox_inches="tight")
 plt.savefig('./plot-'+parameter+'-route-msgs-per-node-PT.pdf', bbox_inches="tight")
 plt.clf() # clear the entire current figure with all its axes
