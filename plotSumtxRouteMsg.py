@@ -2,11 +2,11 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-os.chdir('./scriptResults-all-01/')
+os.chdir('./scriptResults-all-do-0-rf-0-001/')
 cwd = os.getcwd()
 phy = '80211a'
-nb_nodes='81' #'90'
-packetInterval = '0.1'
+nb_nodes='81'
+packetInterval = '0.01'
 #parameter='totalQueued' # 'PreqTotal', 'PrepTotal', 'PerrTotal', txPreqTotal, txPrepTotal, txPerrTotal
 listParameter=['txPreqTotal', 'txPrepTotal', 'txPerrTotal']
 listModes=['R','RP']

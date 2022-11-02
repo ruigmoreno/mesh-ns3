@@ -12,7 +12,7 @@ configureNS3(){
 }
 
 configureScenario(){
-	nb_nodes=71
+  nb_nodes=81
 	radius=300
 }
 
@@ -30,7 +30,7 @@ nb_channels=12 #nb channels 802.11b=3 - 802.11a=12
 
 #####PACKET, FLOWS#####
 packetInterval=0.01
-nb_flows=1
+#nb_flows=1
 
 #####SIMULATION ROUNDS#####
 #rounds
@@ -43,6 +43,7 @@ nb_sim_topologies=5
 run(){
 
 path_plot=$path_results/plot/nb_nodes-$nb_nodes-packetInterval-$packetInterval-$phy-$nb_flows-flows
+rm -r $path_plot
 mkdir -p $path_plot
 mkdir -p $path_results/AggregateThroughput $path_results/DeliveryRate $path_results/DelayMean $path_results/JitterMean
 
@@ -351,4 +352,7 @@ done #interface
 configureNS3
 configureScenario
 configureSimulationParameters
-run
+for nb_flows in 1 10 30 50 70
+do
+		run
+done
