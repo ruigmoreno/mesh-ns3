@@ -4,7 +4,7 @@ import os, cairo, lxml, lxml.etree
 from math import pi
 
 ARQ = 'logMeshSimulationDiscovery.txt'
-XML_DIR = './'
+XML_DIR = './report'
 IMG_W, IMG_H = 700, 700
 
 class Node:
@@ -25,7 +25,7 @@ def main():
     lines = f.read().split('\n')
     f.close()
     
-    nodes = []    
+    nodes = []
     min_x, max_x, min_y, max_y = 10000.0, -10000.0, 10000.0, -10000.0
     for s in lines:
         s = s.strip()
@@ -35,7 +35,7 @@ def main():
             x, y = float( termos[0].strip() ), float( termos[1].strip() )
             min_x, max_x = min(x, min_x), max(x, max_x)
             min_y, max_y = min(y, min_y), max(y, max_y)
-            nodes.append( Node( len(nodes), x,y) )    
+            nodes.append( Node( len(nodes), x,y) )
     
     min_vz, max_vz = 1000, -1000
     arqs = os.listdir(XML_DIR)
@@ -47,7 +47,7 @@ def main():
         node_i = int( os.path.splitext(arq)[0].split('-')[-1] )
         s = open(arq).read()
         t = lxml.etree.fromstring( s )
-        
+
         nd = nodes[node_i]
         nd.addr = str( t.xpath( u"//MeshPointDevice/@address" )[0] )
         for tk in t.xpath( u"//MeshPointDevice/PeerManagementProtocol/PeerLink/@peerInterfaceAddress" ):
@@ -55,7 +55,7 @@ def main():
         
         min_vz, max_vz = min( min_vz, len(nd.vizinhos) ), max( max_vz, len(nd.vizinhos) )
 
-    min_vz, max_vz = float(min_vz), float(max_vz)        
+    min_vz, max_vz = float(min_vz), float(max_vz)
     
     for nd in nodes:
         nd.nz = float( (len(nd.vizinhos) - min_vz) ) / (max_vz - min_vz)
@@ -91,18 +91,18 @@ def main():
         cr.set_source( grad )
         cr.new_path()
         cr.arc( nd.px, nd.py, 100,  0, 2*pi )
-        cr.close_path()        
-        cr.fill()            
+        cr.close_path()
+        cr.fill()
         cr.new_path()
         cr.arc( nd.px, nd.py, 8,  0, 2*pi )
-        cr.close_path()        
+        cr.close_path()
         cr.fill()
                 
         for vz in nd.vizinhos:
             vz_nd = nodes[ findNodeByAddr(vz, nodes) ]
             cr.set_source_rgb( 0,0,1 )
-            cr.move_to( nd.px, nd.py ) 
-            cr.line_to( vz_nd.px, vz_nd.py )            
+            cr.move_to( nd.px, nd.py )
+            cr.line_to( vz_nd.px, vz_nd.py )
             cr.stroke()
 
     for nd in nodes:
@@ -113,5 +113,5 @@ def main():
     surf.show_page()
     surf.finish()
     print ("OK! Figure was generated.")
-                
+
 main()
