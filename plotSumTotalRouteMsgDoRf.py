@@ -63,7 +63,7 @@ for mode in listModes:
         elif flag == 'd1-r0':
             markerStyle='x-'
 
-        plt.errorbar(x_axis, sumy, fmt=markerStyle, color=color, label=mode+' '+flag+' '+packetSize+' bytes', capsize=6)
+        plt.errorbar(x_axis, sumy, fmt=markerStyle, color=palette.colors[index], label=mode+' '+flag+' '+packetSize+' bytes', capsize=6)
         # plt.legend(bbox_to_anchor=(0.1, -.36, .8, .102), loc='lower left', ncol=2, mode="expand", borderaxespad=0)
         plt.legend(bbox_to_anchor=(0.12, -.3, .76, .102), loc='lower left', ncol=2, mode="expand", borderaxespad=0)
         plt.grid(True)
