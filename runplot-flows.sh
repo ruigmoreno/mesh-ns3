@@ -6,13 +6,14 @@ configureNS3(){
 	path_project=~/workspace
 	path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
 
+	#path_traces=$path_NS3/mesh-traces-r-do-0-rf-1
 	path_traces=$path_NS3/mesh-traces-r
 	path_results=$path_NS3/scriptResults-r-71-001
 
 }
 
 configureScenario(){
-  nb_nodes=81
+  nb_nodes=71
 	radius=300
 }
 
@@ -352,7 +353,7 @@ done #interface
 configureNS3
 configureScenario
 configureSimulationParameters
-for nb_flows in 1 10 30 50 70
+for nb_flows in 1 5 10 15 20 25 40 50 60 #1 5 10 20 30 50 70
 do
 		run
 done

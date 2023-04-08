@@ -23,9 +23,7 @@ configureNS3(){
     #echo "Configure NS3"
     path_NS3=$path_project/ns-allinone-3.$version/ns-3.$version
     #clear cache traces
-    rm -r $path_NS3/mesh-*.xml $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
-    #rm -r $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt
-    #$path_NS3/checked*.dot
+    rm -r $path_NS3/mesh-*.xml $path_NS3/mesh-.pcap $path_NS3/results.xml $path_NS3/logMesh*.txt $path_NS3/checked*.dot
 }
 ################################################################
 configureScenario(){
@@ -502,17 +500,17 @@ configureScenario
 
 
 
-for nb_nodes in 81 #121 101 61 141
+for nb_nodes in 81 #71 81 # 81 121 101 61 141
 do
 
 	echo "$nb_nodes nodes"
 
-	for packetInterval in 0.1 #1 0.1 0.01 0.001
+	for packetInterval in 0.01 #1 0.1 0.01 0.001
 	do
 
 		echo "-- $packetInterval interval"
 
-		for nb_flows in 1 10 30 50 70
+		for nb_flows in 1 5 10 15 20 25 30 40 50 60 #15 25 40 60 # 1 10 30 50 70
 		do
 
 			echo "--- $nb_flows flows"

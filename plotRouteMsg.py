@@ -2,10 +2,12 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-os.chdir('./scriptResults-all-001/')
+filename='./scriptResults-all-do-0-rf-0-001/'
+sufixname=filename[20:].rstrip('/')
+os.chdir(filename)
 cwd = os.getcwd()
 phy = '80211a'
-nb_nodes='81' # 81
+nb_nodes='81' # '71' or '81'
 packetInterval = '0.01'
 parameter='AggregateThroughput' # AggregateThroughput, DeliveryRate, DelayMean, Preq, Prep, Perr, txPreq, txPrep, txPerr, droppedTtl
 listModes=['R','RP']
@@ -55,6 +57,6 @@ for mode in listModes:
         plt.grid(True)
 #plt.suptitle(title, y=0.925)
 # plt.savefig('./plot-'+parameter+'-route-msgs-per-node.pdf', bbox_inches="tight")
-plt.savefig('./plot-'+parameter+'-route-msgs-per-node-PT.pdf', bbox_inches="tight")
+plt.savefig('./plot-'+sufixname+'-'+parameter+'-route-msgs-per-node-PT.pdf', bbox_inches="tight")
 plt.clf() # clear the entire current figure with all its axes
 
